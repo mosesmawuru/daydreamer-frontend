@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Titan One";
+  /*Can be any text*/
+
+  src: local("TitanOne-Regular"),
+    url("../src/assets/font/TitanOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  /*Can be any text*/
+
+  src: local("MysteryQuest-Regular"),
+    url("../src/assets/font/MysteryQuest-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kalam";
+  /*Can be any text*/
+
+  src: local("Kalam-Light"),
+    url("../src/assets/font/Kalam-Light.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+  cursor: none;
+  user-select: none;
+}
+
+*:active {
+  cursor: none;
+}
+
+body,
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+iframe {
+  display: none;
+}
+
+/* -------- */
