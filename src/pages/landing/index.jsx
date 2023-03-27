@@ -30,7 +30,7 @@ const Landing = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 3500);
   }, [])
 
   // console.log(123123123, props);

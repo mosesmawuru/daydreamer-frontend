@@ -1,23 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 
 import styled from 'styled-components';
 
 import { MouseContext } from "../../contexts/mouse-context";
 
-import aboutus from "assets/images/graphic/55.gif";
-import ourvision from "assets/images/graphic/Broom peasant.gif";
-import artflexing from "assets/images/graphic/bitcoing cowboy.gif";
-import faq from "assets/images/graphic/Without hover Super hero.gif";
-import mint from "assets/images/graphic/88.gif";
-import comming from "assets/images/graphic/Knight Without hover.gif";
+// import aboutus from "assets/images/graphic/55.gif";
+// import ourvision from "assets/images/graphic/Broom peasant.gif";
+// import artflexing from "assets/images/graphic/bitcoing cowboy.gif";
+// import faq from "assets/images/graphic/Without hover Super hero.gif";
+// import mint from "assets/images/graphic/88.gif";
+// import comming from "assets/images/graphic/Knight Without hover.gif";
 
-import aboutus1 from "assets/images/graphic/77.gif";
-import ourvision1 from "assets/images/graphic/66.gif";
-import artflexing1 from "assets/images/graphic/44.gif";
-import faq1 from "assets/images/graphic/on hover.gif";
-import mint1 from "assets/images/graphic/11.gif";
-import comming1 from "assets/images/graphic/Knight on hover.gif";
+// import aboutus1 from "assets/images/graphic/77.gif";
+// import ourvision1 from "assets/images/graphic/66.gif";
+// import artflexing1 from "assets/images/graphic/44.gif";
+// import faq1 from "assets/images/graphic/on hover.gif";
+// import mint1 from "assets/images/graphic/11.gif";
+// import comming1 from "assets/images/graphic/Knight on hover.gif";
 
 const ChildrenContainer = styled.div`
   
@@ -75,11 +75,6 @@ const ChildrenContainer = styled.div`
     }
     }
   }
-    
-    // bulb img
-    #lightbulb {
-      position: fixed;
-    }
 `;
 
 const Children = (props) => {
@@ -88,6 +83,19 @@ const Children = (props) => {
 
   const { cursorChangeHandler } = useContext(MouseContext);
 
+  const aboutus = "https://drive.google.com/uc?id=18zUhpSCil1BpdDKivrWz7C9HmXelILH5";
+  const ourvision = "https://drive.google.com/uc?id=1JumHc6rZ6bX9IguV7QRkzDWJuu--ZI_E";
+  const artflexing = "https://drive.google.com/uc?id=1k-6TyjqmTSiXBw7swcqO0tTwdqogzXFP";
+  const faq = "https://drive.google.com/uc?id=1TsreJFMcF3x4gTT9VQEmHHxjkqnN-XGf";
+  const mint = "https://drive.google.com/uc?id=1HpkuVajgqfV0cXmQHyhUiad8qaIxBewX";
+  const comming = "https://drive.google.com/uc?id=1-ftWTyIcXU4iEy4MbOtCUloH5_CZTYED";
+
+  const aboutus1 = "https://drive.google.com/uc?id=1nKB8Jx2hCuNg-Nu5UqI5lrhX6OZV4pE6";
+  const ourvision1 = "https://drive.google.com/uc?id=1KsFnwsJFYwWjtHF_69t3gPuK43dH4TBu";
+  const artflexing1 = "https://drive.google.com/uc?id=19_sxTZTqfQM0LTD1ArVuGGIFr7gGaNma";
+  const faq1 = "https://drive.google.com/uc?id=1ip8Xl6JOWpYUVZSJIOUV22TPFEl038Tm";
+  const mint1 = "https://drive.google.com/uc?id=1FHWyrqQUXqCebcvJIBLomxuMGWJqaqmp";
+  const comming1 = "https://drive.google.com/uc?id=1ycErhQMbinisI1UTAJqYKnUlYrR877Vw";
 
   const onChildClick = (e, FuncType) => {
     switch (FuncType) {
