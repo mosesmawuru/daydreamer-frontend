@@ -27,7 +27,6 @@ const ChildrenContainer = styled.div`
     justify-content:center ;
     align-items: flex-end;
     bottom: 10px ;
-    /* gap: 5px; */
     ${props => props.isPosLeftChildren ? "left" : "right"} : 80px;
     div {
       position: relative;
@@ -35,6 +34,7 @@ const ChildrenContainer = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 200px;
         transition: all 0s !important;
         img:nth-child(1) {
           position: absolute; 
@@ -47,7 +47,8 @@ const ChildrenContainer = styled.div`
           right: -28px;
           transform: scale(0.8);
           z-index: 998;
-          visibility: hidden;
+          /* visibility: hidden; */
+          display: none;
         }
         img:nth-child(2) {
         object-fit: cover;
@@ -83,7 +84,6 @@ const ChildrenContainer = styled.div`
 
 const Children = (props) => {
 
-  // const [hoverType, setType] = useState("");
   const navigate = useNavigate();
 
   const { cursorChangeHandler } = useContext(MouseContext);
@@ -114,71 +114,21 @@ const Children = (props) => {
     }
   }
 
-  const midFunction = (FuncType, testNum) => {
-    if (testNum == 2) {
-      switch (FuncType) {
-        case "aboutus":
-          return aboutus;
-        case "ourvision":
-          return ourvision;
-        case "mint":
-          return mint
-        case "faq":
-          return faq;
-        case "comming":
-          return comming
-        case "artflexing":
-          return artflexing;
-        default:
-          return "";
-      }
-    }
-    if (testNum == 1) {
-      switch (FuncType) {
-        case "aboutus":
-          return aboutus1;
-        case "ourvision":
-          return ourvision1;
-        case "mint":
-          return mint1;
-        case "faq":
-          return faq1;
-        case "comming":
-          return comming1;
-        case "artflexing":
-          return artflexing1;
-        default:
-          return "";
-      }
-    }
-  }
   const onChildOver = (e, FuncType) => {
     cursorChangeHandler("hovered")
-    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[1].style.visibility = "hidden";
-    // document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[1].style.transform = "scale(0.6) translateX(-50px) translateY(-55px)";
-
-    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[0].style.visibility = "visible";
+    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[1].style.display = "none";
+    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[0].style.display = "block";
     props.setMask(true);
   }
   const onChildLeave = (e, FuncType) => {
     cursorChangeHandler("")
-    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[1].style.visibility = "visible";
-    // document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[1].style.transform = "scale(1) translateX(0px) translateY(0px)";
-    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[0].style.visibility = "hidden";
+    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[1].style.display = "block";
+    document.getElementsByClassName(FuncType)[0].getElementsByTagName("img")[0].style.display = "none";
     props.setMask(false);
   }
 
   return (
     <ChildrenContainer isPosLeftChildren={props.isPosLeftChildren}>
-
-      {/* <div className='link-children'>
-        <div className="mint"></div>
-        <div className="aboutus"></div>
-        <div className="ourvision"></div>
-        <div className="faq"></div>
-        <div className="comming"></div>
-        <div className="artflexing"></div>
-      </div> */}
       <div className='children'>
         <div className="aboutus" onClick={(e) => onChildClick(e, "aboutus")} onMouseOver={(e) => onChildOver(e, "aboutus")} onMouseOut={(e) => onChildLeave(e, "aboutus")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("")}>
           <img src={aboutus1} alt="child2" />

@@ -4,7 +4,7 @@ import { BsPlayFill, BsPauseFill } from 'react-icons/bs';
 import Sound from 'react-sound';
 import styled from 'styled-components';
 
-import audio_path from 'assets/audio/bgmusic.wav';
+import audio_path from 'assets/audio/bgmusic.mp3';
 
 //import image
 import radio from 'assets/images/music/radio.png';
