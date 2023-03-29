@@ -1,20 +1,21 @@
-import React, { useEffect, useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import styled from 'styled-components'
 
-import board from 'assets/images/faqBoard.png';
+import board from 'assets/images/walletBoard.png';
 import cButton from 'assets/images/cButton.png';
+import wlButton from 'assets/images/wlButton.png';
 
-import { useEthContext } from "../../contexts/EthereumContext";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { MouseContext } from 'contexts/mouse-context';
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 // style
 const FaqContainer = styled.div`
   position: absolute;
-  width: 450px;
-  height: 780px;
+  width: 500px;
+  height: 500px;
   left: calc((100vw - 450px) / 2);
 
   font-family: "Titan One";
@@ -24,7 +25,7 @@ const FaqContainer = styled.div`
 
   // amination area
   animation-name: RaiseUpFaqBoard;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 
@@ -33,10 +34,10 @@ const FaqContainer = styled.div`
 
   @keyframes RaiseUpFaqBoard {
     0% {
-      top: 100vh;
+      top: -500px;
     }
     100% {
-      top: -90px;
+      top: 0px;
     }
   }
   @keyframes RaiseUpFaqBoardMore {
@@ -52,52 +53,101 @@ const FaqContainer = styled.div`
     right: calc((100vw - 400px)/2);
   }
   @media screen and (max-width: 425px) {
-    left: 0;
+    left: -40px;
   }
   @media screen and (max-width: 375px) {
-    left: -10px;
+    width: 110%;
+    height: 400px;
+    left: -5%;
   }
   @media screen and (max-width: 320px) {
-    left: -25px;
+    
   }
 
   div.wallet-button {
     background: url(${cButton}) no-repeat;
     background-size: 100% 100%;
-    width: 190px;
+    width: 200px;
     height: 100px;
     position: absolute;
-    bottom: 180px;
-    left: 100px;
+    bottom: 200px;
+    left: 150px;
     transform: scale(1.2);
 
     span {
       transform: rotate(-4deg);
       position: absolute;
       bottom: 25px;
+      width: 100%;
+      text-align: center;
     }
-  }
-  div.wallet-button:hover {
-    span {
+    span:hover {
       color: #ff3e3e;
     }
-  }
 
-  span.minus:hover, span.plus:hover {
-    color: #ff3e3e;
+    @media screen and (max-width: 375px) {
+      scale: 0.8;
+      bottom: 150px;
+      left: 110px;
+    }
+    @media screen and (max-width: 325px) {
+      left: 80px;
+    }
   }
   div.mint-button {
-    transform: scale(0.8);
 
-    animation-duration: 0.5s;
+    background: url(${wlButton}) no-repeat;
+    background-size: 100% 100%;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    width: 300px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    
+    bottom: 45px;
+    /* animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    @keyframes Appear {
-      from { bottom: 180px }
-      to { bottom: 100px }
-    }
+    opacity: 0; */
+    /* @keyframes Appear {
+      from { bottom: 180px; opacity: 0 }
+      to { bottom: 100px; opacity: 1; }
+    } */
     span {
       left: 43px;
+    }
+    span:hover {
+      color: #ff3e3e;
+    }
+    input {
+      width: 250px;
+      height: 30px;
+      outline: none;
+      border: 2px solid #52d7ff;
+      border-radius: 20px;
+      padding-left: 10px;
+      padding-right: 5px;
+      color: #52d7ff;
+      font-family: "Titan One";
+      font-size: 18px;
+      font-weight: lighter;
+    }
+    input:focus {
+      border: 2px solid #ff3e3e;
+    }
+
+    @media screen and (max-width: 375px) {
+      scale: 0.8;
+      bottom: 18px;
+      left: 65px;
+    }
+    @media screen and (max-width: 325px) {
+      left: 30px;
     }
   }
 
@@ -141,10 +191,16 @@ const FaqContainer = styled.div`
       height: 180px;
     }
     img:first-child {
-      transform: scale(0.8);
+      transform: scale(0.8) translateY(10px) translateX(25px);
+      @media screen and (max-width: 375px) {
+        display: none;
+      }
     }
     img:last-child {
-      transform: translateY(-30px) translateX(-10px);
+      transform: translateY(-20px) translateX(-5px);
+      @media screen and (max-width: 375px) {
+      transform: scale(1.3) translateY(25vh) translateX(30vw);
+      }
     }
   }
 `;
@@ -152,26 +208,102 @@ const FaqContainer = styled.div`
 const FaqBoard = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
-  const onClickMint = async () => {
-
-  }
+  const [addr, setWalletAddress] = useState("");
+  const [wlLoading, setWlLoading] = useState(false);
 
   const WLchecker = async () => {
-
-  };
-
-  const handleConnectWalletMetamask = async () => {
+    if (addr === "") {
+      toast.error("Please enter wallet address!", {
+        theme: "dark",
+      });
+      return;
+    }
+    setWlLoading(true);
+    const proof = await axios
+      .get(`https://daydream-backend.vercel.app/get/${addr}`)
+      .then((res) => {
+        return res.data.proof;
+      });
+    setWlLoading(false);
+    if (proof.length === 0) {
+      toast.error("Sorry, You are not in WhiteList.", {
+        theme: "light",
+      });
+    }
+    else {
+      toast.error("Congratulation, You are on WhiteList.", {
+        theme: "light",
+      });
+    }
   };
 
   return (
     <FaqContainer>
+      <ConnectButton.Custom>
+        {({
+          account,
+          chain,
+          openAccountModal,
+          openChainModal,
+          openConnectModal,
+          authenticationStatus,
+          mounted,
+        }) => {
+          // Note: If your app doesn't use authentication, you
+          // can remove all 'authenticationStatus' checks
+          const ready = mounted && authenticationStatus !== "loading";
+          const connected =
+            ready &&
+            account &&
+            chain &&
+            (!authenticationStatus ||
+              authenticationStatus === "authenticated");
 
-      <div className="wallet-button mint-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
-        <span onClick={WLchecker}>Check WL</span>
-      </div>
-      <div className="wallet-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
-        <span style={{ left: "13px" }} onClick={onClickMint}>Connect Wallet</span>
-      </div>
+          return (
+            <div
+              {...(!ready && {
+                "aria-hidden": true,
+                style: {
+                  opacity: 0,
+                  pointerEvents: "none",
+                  userSelect: "none",
+                },
+              })}
+            >
+              {(() => {
+                if (!connected) {
+                  return (
+                    <div className="wallet-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
+                      <span onClick={openConnectModal}>Connect Wallet</span>
+                    </div>
+                  );
+                }
+
+                if (chain.unsupported) {
+                  return (
+                    <button onClick={openChainModal} type="button">
+                      Wrong network
+                    </button>
+                  );
+                }
+
+                return (
+                  <div style={{ display: "flex", gap: 12 }}>
+                    <div className="mint-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
+                      <input type="text" placeholder='Wallet Address Here...' onChange={(e) => setWalletAddress(e.target.value)} />
+                      {wlLoading ? <span>Checking ...</span> : <span onClick={WLchecker}>Check WL</span>}
+                    </div>
+                    <div className="wallet-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
+                      <span onClick={openAccountModal}>{account.displayName}</span>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+          );
+        }}
+      </ConnectButton.Custom>
+
       <div className='graphic'>
         <img src="https://drive.google.com/uc?id=1gq8F6ZEjQ2ArUR622w7T21wRnER9L3iH" alt="" />
         <img src="https://drive.google.com/uc?id=1XZxhUtb_nSoFYyrl5rRk8LNm8NR8TSWe" alt="" />
