@@ -273,8 +273,14 @@ const FaqBoard = () => {
               {(() => {
                 if (!connected) {
                   return (
-                    <div className="wallet-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
-                      <span onClick={openConnectModal}>Connect Wallet</span>
+                    <div>
+                      <div className="mint-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
+                        <input type="text" placeholder='Wallet Address Here...' onChange={(e) => setWalletAddress(e.target.value)} />
+                        {wlLoading ? <span>Checking ...</span> : <span onClick={WLchecker}>Check WL</span>}
+                      </div>
+                      <div className="wallet-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
+                        <span onClick={openConnectModal}>Connect Wallet</span>
+                      </div>
                     </div>
                   );
                 }
