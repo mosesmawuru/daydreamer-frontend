@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 
 import styled from 'styled-components'
 
@@ -8,8 +8,6 @@ import cButton from 'assets/images/cButton.png';
 import { useEthContext } from "../../contexts/EthereumContext";
 import { toast } from "react-toastify";
 import axios from "axios";
-
-
 import { MouseContext } from 'contexts/mouse-context';
 
 // style
@@ -152,69 +150,17 @@ const FaqContainer = styled.div`
 `;
 
 const FaqBoard = () => {
-
-  const { web3, currentAcc, provider } = useEthContext();
-  // const [isWL, setIsWL] = useState();
-
   const { cursorChangeHandler } = useContext(MouseContext);
 
-  useEffect(() => {
-    if (currentAcc)
-      document.getElementsByClassName("mint-button")[0].style.animationName = "Appear";
-  }, [])
-  useEffect(() => {
-    if (currentAcc)
-      document.getElementsByClassName("mint-button")[0].style.animationName = "Appear";
-    else
-      document.getElementsByClassName("mint-button")[0].style.animationName = "";
-  }, [currentAcc])
-
-
   const onClickMint = async () => {
-    await handleConnectWallet();
-    document.getElementsByClassName("mint-button")[0].style.animationName = "Appear";
+
   }
 
-  const disconnect = async () => {
+  const WLchecker = async () => {
 
   };
-  const WLchecker = async (currentAcc) => {
 
-    const proof = await axios
-      .get(`https://daydream-backend.vercel.app/get/${currentAcc}`)
-      .then((res) => {
-        return res.data.proof;
-      });
-    // setIsWL(proof.length !== 0);
-    if (proof.length === 0) {
-      toast.error("Sorry, You are not on whitelist.", {
-        theme: "light"
-      })
-    }
-    else {
-      toast.success("Congratulations, You are on whitelist.", {
-        theme: "light"
-      })
-    }
-  };
-
-  const handleConnectWallet = async () => {
-    if (provider) {
-      if (Number(window.ethereum.chainId) !== 1) {
-        toast.error("Please connect to Ethereum Mainnet", {
-          theme: "dark",
-        });
-        return false;
-      } else {
-        await provider.request({ method: `eth_requestAccounts` });
-        return true;
-      }
-    } else {
-      toast.error("Please install Metamask wallet in this browser", {
-        theme: "dark",
-      });
-      return false;
-    }
+  const handleConnectWalletMetamask = async () => {
   };
 
   return (
@@ -224,18 +170,7 @@ const FaqBoard = () => {
         <span onClick={WLchecker}>Check WL</span>
       </div>
       <div className="wallet-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
-        {currentAcc
-          ?
-          <div className='notice-wl'>
-            <span>{`${currentAcc.substring(0, 5)}...${currentAcc.substring(
-              currentAcc.length - 3,
-              currentAcc.length
-            )}`}</span>
-            {/* <span style={{ color: isWL ? 'green' : 'red' }}>{isWL ? "Congratulations, You are on whitelist." : "Sorry, You are not on whitelist."}</span> */}
-          </div>
-          :
-          <span style={{ left: "13px" }} onClick={onClickMint}>Connect Wallet</span>
-        }
+        <span style={{ left: "13px" }} onClick={onClickMint}>Connect Wallet</span>
       </div>
       <div className='graphic'>
         <img src="https://drive.google.com/uc?id=1gq8F6ZEjQ2ArUR622w7T21wRnER9L3iH" alt="" />

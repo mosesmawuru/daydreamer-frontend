@@ -43,7 +43,7 @@ const Mint = (props) => {
         </div>
       </LinkButtons>
       {/* <ChildrenComponent isPosLeftChildren={true} setMask={setMask} /> */}
-      <MintBoard />
+      <MintBoard setMask={setMask} />
       <Logo />
       <DarkMask isMask={isMask}></DarkMask>
       <QuickMenu setMask={setMask} />
