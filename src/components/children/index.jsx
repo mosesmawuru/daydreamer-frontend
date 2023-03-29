@@ -100,22 +100,22 @@ const Children = (props) => {
   const onChildClick = (e, FuncType) => {
     switch (FuncType) {
       case "aboutus":
-        navigate("/aboutus");
+        navigate("/about-us");
         break;
       case "ourvision":
-        navigate("/dreamerz");
+        navigate("/day-dreamerz");
         break;
       case "mint":
-        navigate("/mint");
+        navigate("/whitelist-checker");
         break;
       case "faq":
         navigate("/faq");
         break;
       case "comming":
-        navigate("/comming");
+        navigate("/D-connect");
         break;
       case "artflexing":
-        navigate("/ordinal");
+        navigate("/ordinal-dreamerz");
         break;
       default:
         navigate("/");

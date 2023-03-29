@@ -81,13 +81,13 @@ function App() {
                   }
                 ></Route>
                 <Route
-                  path="/comming"
+                  path="/D-connect"
                   element={
                     <Comming onThemeClick={themeToggler} />
                   }
                 ></Route>
                 <Route
-                  path="/mint"
+                  path="/whitelist-checker"
                   element={
                     <Mint onThemeClick={themeToggler} />
                   }
@@ -99,19 +99,19 @@ function App() {
                   }
                 ></Route>
                 <Route
-                  path="/ordinal"
+                  path="/ordinal-dreamerz"
                   element={
                     <ArtFlexible onThemeClick={themeToggler} />
                   }
                 ></Route>
                 <Route
-                  path="/aboutus"
+                  path="/about-us"
                   element={
                     <AboutUs onThemeClick={themeToggler} />
                   }
                 ></Route>
                 <Route
-                  path="/dreamerz"
+                  path="/day-dreamerz"
                   element={
                     <DayDreamerz onThemeClick={themeToggler} />
                   }

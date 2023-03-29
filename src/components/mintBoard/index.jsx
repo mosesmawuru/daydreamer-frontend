@@ -11,6 +11,8 @@ import axios from "axios";
 import { MouseContext } from 'contexts/mouse-context';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
+import { useAccount } from 'wagmi';
+
 // style
 const FaqContainer = styled.div`
   position: absolute;
@@ -210,14 +212,9 @@ const FaqBoard = () => {
 
   const [addr, setWalletAddress] = useState("");
   const [wlLoading, setWlLoading] = useState(false);
+  // const { address } = useAccount();
 
   const WLchecker = async () => {
-    if (addr === "") {
-      toast.error("Please enter wallet address!", {
-        theme: "dark",
-      });
-      return;
-    }
     setWlLoading(true);
     const proof = await axios
       .get(`https://daydream-backend.vercel.app/get/${addr}`)
@@ -231,7 +228,7 @@ const FaqBoard = () => {
       });
     }
     else {
-      toast.error("Congratulation, You are on WhiteList.", {
+      toast.success("Congratulation, You are on WhiteList.", {
         theme: "light",
       });
     }
@@ -251,6 +248,9 @@ const FaqBoard = () => {
         }) => {
           // Note: If your app doesn't use authentication, you
           // can remove all 'authenticationStatus' checks
+
+          if (account) setWalletAddress(account.address);
+
           const ready = mounted && authenticationStatus !== "loading";
           const connected =
             ready &&
