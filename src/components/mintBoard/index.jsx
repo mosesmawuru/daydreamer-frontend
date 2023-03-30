@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import styled from 'styled-components'
 
@@ -11,7 +11,7 @@ import axios from "axios";
 import { MouseContext } from 'contexts/mouse-context';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-// import { useAccount } from 'wagmi';
+import { useAccount } from 'wagmi';
 
 // style
 const FaqContainer = styled.div`
@@ -212,12 +212,23 @@ const FaqBoard = () => {
 
   const [addr, setWalletAddress] = useState("");
   const [wlLoading, setWlLoading] = useState(false);
-  // const { address } = useAccount();
+  const { address } = useAccount();
+
+  useEffect(() => {
+    setWalletAddress(address);
+  }, [address])
 
   const WLchecker = async () => {
+    alert(addr)
+    if (addr === "" || addr === undefined) {
+      toast.error("Please connect your wallet or confirm the wallet address!", {
+        theme: "dark",
+      });
+      return;
+    }
     setWlLoading(true);
     const proof = await axios
-      .get(`https://d-connect-backend-main.vercel.app/get/${addr}`)
+      .get(`https://ddbackendapp.vercel.app/get/${addr}`)
       .then((res) => {
         return res.data.proof;
       });
