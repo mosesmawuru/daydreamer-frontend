@@ -29,6 +29,21 @@ export const LandingContainer = styled.div`
   animation-timing-function:linear ;
   animation-fill-mode: forwards;
 
+  img.cowboy {
+    display: none;
+    position: absolute;
+    left: calc((100vw - 400px) / 2);
+    @media screen and (max-width: 425px) {
+      display: block;
+      width: 400px;
+      height: 250px;
+      bottom: 50px;
+      z-index: 990 !important;
+    }
+    @media screen and (max-width: 425px) {
+    }
+  }
+
   .book {
     position: relative;
     background: url(${bookImg});
@@ -172,6 +187,7 @@ export const LandingContainer = styled.div`
       position: absolute;
       bottom: 70px;
       right: 300px;
+      z-index: 998;
       @media screen and (max-width: 425px) {
         right: 160px;
         bottom: 40px;

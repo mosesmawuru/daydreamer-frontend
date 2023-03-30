@@ -25,6 +25,21 @@ export const LandingContainer = styled.div`
   animation-timing-function:linear ;
   animation-fill-mode: forwards;
 
+  img.peasant {
+    display: none;
+    position: absolute;
+    left: calc((100vw - 400px) / 2);
+    @media screen and (max-width: 425px) {
+      display: block;
+      width: 400px;
+      height: 250px;
+      bottom: 50px;
+      z-index: 990 !important;
+    }
+    @media screen and (max-width: 425px) {
+    }
+  }
+
   .book {
     position: relative;
     background: url(${bookImg});
@@ -245,7 +260,7 @@ export const DarkMask = styled.div`
 
 export const LinkButtons = styled.div`
 /* border: 1px solid red; */
-  width:220px ;
+  width:300px ;
   position: fixed;
   top:28px ;
   right:15px ;
@@ -270,6 +285,32 @@ export const LinkButtons = styled.div`
     }
   }
   div:nth-child(3) {
+    display:flex ;
+    justify-content:center ;
+    align-items:center ;
+    background-color:${({ theme }) => theme.link_bg} ;
+    border-radius:50% ;
+    width:40px ;
+    height:40px ;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
+    @media screen and (max-width: 425px) {
+      display: none;
+    }
+  }
+  div:nth-child(4) {
+    display:flex ;
+    justify-content:center ;
+    align-items:center ;
+    background-color:${({ theme }) => theme.link_bg} ;
+    border-radius:50% ;
+    width:40px ;
+    height:40px ;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
+    @media screen and (max-width: 425px) {
+      display: none;
+    }
+  }
+  div:nth-child(5) {
     display:flex ;
     justify-content:center ;
     align-items:center ;

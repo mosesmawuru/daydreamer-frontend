@@ -16,14 +16,8 @@ import Logo from '../../components/logo';
 
 import PageFlip from '../../components/pageFlipOrdinal';
 
-import nft1 from "assets/images/nfts/ordinal/1.png";
-import nft2 from "assets/images/nfts/ordinal/2.png";
-import nft3 from "assets/images/nfts/ordinal/3.png";
-import nft4 from "assets/images/nfts/ordinal/4.png";
-import nft5 from "assets/images/nfts/ordinal/5.png";
-import nft6 from "assets/images/nfts/ordinal/6.png";
-import nft7 from "assets/images/nfts/ordinal/7.png";
-import nft8 from "assets/images/nfts/ordinal/8.png";
+import nft1 from "assets/images/nfts/ordinal/ordinal.gif";
+import peasant from "assets/images/graphic/Dancing Peasant.gif";
 
 import opensea from 'assets/images/icons/os.png'
 import whitepaper from 'assets/images/icons/wp.png'
@@ -85,24 +79,18 @@ const Intro = (props) => {
       <div className="scroll">
         <div className='aboutus-title'>Ordinal<br /> Dreamerz</div>
         <div className='aboutus-body'>
-          <img src={nft1} alt="nft1" />
           <p>Ordinal Dreamerz is a unique collection that features charming pixelated dreamerz, designed as a token of appreciation for our Day Dreamerz holders. Our main goal is to add value to the holders' experience and protect their aspirations. All Ordinal Dreamerz holders will enjoy the same benefits and privileges in the Day Dreamerz ecosystem.</p>
-          <img src={nft2} alt="nft1" />
           <p>
             The minting of Ordinal Dreamerz will commence after the launch of our genesis collection "Day Dreamerz". We will announce the date and time of the snapshot well in advance.</p>
-          <img src={nft3} alt="nft1" />
           <p>
             Every Day Dreamerz holder will receive a free mint of one Ordinal Dreamerz.<br />
             1x Day Dreamerz = 1x Ordinal Dreamerz Free Mint.</p>
-          <img src={nft4} alt="nft1" />
-          <img src={nft5} alt="nft1" />
-          <img src={nft6} alt="nft1" />
-          <img src={nft7} alt="nft1" />
-          <img src={nft8} alt="nft1" />
+          <img src={nft1} alt="nft1" />
         </div>
         <VscTriangleDown size={40} opacity={0.6} onClick={scrollUp} />
         <img className='nav-child3' src="https://drive.google.com/uc?id=139iyqtbq3Jg7df8KZOnVFczK0cXhwFRf" alt="child1" onClick={onChildClick} onMouseOver={() => onChildOver()} onMouseOut={() => onChildLeave()} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")} />
       </div>
+      <img src={peasant} alt="cowboy" className='peasant' />
       <Logo />
       <QuickMenu setMask={setMask} />
     </LandingContainer >
