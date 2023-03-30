@@ -175,12 +175,12 @@ export const ChildrenArea = styled.div`
   }
   @media screen and (max-width: 1024px) {
     width: 95vw;
-    height: 80vh;
+    height: 640px;
     left: 2.5vw;
   }
   @media screen and (max-width: 425px) {
     width: 95vw;
-    height: 70vh;
+    height: 540px;
   }
 
   background: url(${board});

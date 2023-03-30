@@ -53,7 +53,7 @@ const MenuContainer = styled.div`
 
   div.menu-body {
     position: relative;
-    width: 80%;
+    width: 90%;
     height:330px;
     background-color: #fff;
     margin: auto;
@@ -182,11 +182,11 @@ const Menu = (props) => {
         <span onClick={onClose}><FaTimes /></span>
         <div className='sub-menu-container'>
           <div>QUICK MENU</div>
-          <div><a href="/aboutus">About US</a> </div>
-          <div><a href="/dreamerz">Day Dreamerz</a> </div>
-          <div><a href="/ordinal">Ordinal Dreamerz</a> </div>
-          <div><a href="/comming">D-connect</a> </div>
-          <div><a href="/mint">WL checker</a> </div>
+          <div><a href="/about-us">About US</a> </div>
+          <div><a href="/day-dreamerz">Day Dreamerz</a> </div>
+          <div><a href="/ordinal-dreamerz">Ordinal Dreamerz</a> </div>
+          <div><a href="/D-connect">D-connect</a> </div>
+          <div><a href="/whitelist-checker">WL checker</a> </div>
           <div><a href="/faq">FAQ</a> </div>
           <div className='social-api'>
             <div>

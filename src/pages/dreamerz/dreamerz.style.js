@@ -85,11 +85,21 @@ export const LandingContainer = styled.div`
     }
     @media screen and (max-width: 768px) {
       width: 100vw;
-    }
-    @media screen and (max-width: 425px) {
+    }@media screen and (max-width: 425px) {
       width: 105w;
-      height: 70vh;
+      height: 460px;
       top: 15vh;
+      padding: 100px 8vw 80px 8vw;
+    }
+    @media screen and (max-width: 375px) {
+      height: 440px;
+      top: 15vh;
+      padding: 90px 8vw 80px 8vw;
+    }
+    @media screen and (max-width: 325px) {
+      height: 400px;
+      top: 15vh;
+      padding: 90px 8vw 80px 8vw;
     }
     div.aboutus-title {     
       /* border :1px solid red ; */
@@ -164,6 +174,7 @@ export const LandingContainer = styled.div`
       right: 300px;
       @media screen and (max-width: 425px) {
         right: 160px;
+        bottom: 40px;
       }
       @media screen and (max-width: 375px) {
         right: 130px;
