@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 import bookImg from "assets/images/book.png";
-import scrollImg from "assets/images/scroll.gif";
+import scrollImg from "assets/images/scroll.png";
 
 export const LandingContainer = styled.div`
    @keyframes container_bg_animation2{
@@ -65,11 +65,10 @@ export const LandingContainer = styled.div`
     background: url(${scrollImg});
     background-size: 100% 100%;
     width: 80vw;
-    height: 70vh;
+    height: 90vh;
     margin: auto;
     top: 5vh;
-    left: -120px;
-    padding: 10vh 0vw;
+    padding: 20vh 8vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,37 +80,23 @@ export const LandingContainer = styled.div`
       width: 88vw;
     }
     @media screen and (max-width: 768px) {
-      top: 15vh;
-      left: -180px;
-      width: 110vw;
+      width: 100vw;
     }
     @media screen and (max-width: 425px) {
-      width: 125vw;
-      left: -140px;
-      height: 430px;
+      width: 105w;
+      height: 460px;
       top: 15vh;
-      /* padding: 100px 0 80px 0; */
-    }
-    @media screen and (max-width: 390px) {
-      width: 130vw;
-      left: -135px;
-      height: 400px;
-      top: 15vh;
-      /* padding: 90px 0 80px 0; */
+      padding: 100px 8vw 80px 8vw;
     }
     @media screen and (max-width: 375px) {
-      width: 130vw;
-      left: -135px;
+      height: 440px;
+      top: 15vh;
+      padding: 80px 8vw;
+    }
+    @media screen and (max-width: 325px) {
       height: 400px;
       top: 15vh;
-      /* padding: 90px 0 80px 0; */
-    }
-    @media screen and (max-width: 320px) {
-      height: 360px;
-      left: -115px;
-      top: 15vh;
-      padding-top: 60px;
-      /* padding: 90px 0 80px 0; */
+      padding: 80px 8vw 80px 8vw;
     }
     div.aboutus-title {     
       /* border :1px solid red ; */
@@ -120,8 +105,9 @@ export const LandingContainer = styled.div`
       font-weight: 400;
       font-size: 48px;
       padding-bottom: 20px;
-      transform: translateX(-90px);
+      transform: translateX(-70px);
       text-align: center;
+      margin-right: 50px;
       @media screen and (max-width: 425px) {
         font-size: 35px;
         letter-spacing: -2px;
@@ -145,7 +131,7 @@ export const LandingContainer = styled.div`
     }
     div.aboutus-body {
       /* border: 1px solid yellow; */
-      width: 65%;
+      width: 80%;
       overflow-y: scroll;
       display: flex;
       justify-content: space-around;
@@ -153,25 +139,19 @@ export const LandingContainer = styled.div`
       flex-wrap: wrap;      
       /* box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%); */
       border-radius: 10px;
-      
-      transform: translateX(60px); 
       img, p {
         margin-top: 10px;
-        width: 60%;
+        width: 80%;
         font-family: "Pacifico";
         font-size: 20px;
 
         @media screen and (max-width: 425px) {
-          font-size: 18px;
+          font-size: 17px;
         }
       }
+
       @media screen and (max-width: 425px) {
-        width: 66%;
-        transform: translateX(40px); 
-      }
-      @media screen and (max-width: 320px) {
-        width: 68%;
-        transform: translateX(40px); 
+        margin-right: -10px;
       }
     }
     div.aboutus-body::-webkit-scrollbar {
@@ -193,17 +173,17 @@ export const LandingContainer = styled.div`
     
     svg {
       position: absolute;
-      bottom: 30px;
-      right: 200px;
+      bottom: 70px;
+      right: 300px;
       @media screen and (max-width: 425px) {
-        right: 120px;
-        bottom: 30px;
+        right: 160px;
+        bottom: 40px;
       }
       @media screen and (max-width: 375px) {
-        right: 110px;
+        right: 130px;
       }
       @media screen and (max-width: 320px) {
-        right: 90px;
+        right: 110px;
       }
     }
 
@@ -265,7 +245,7 @@ export const DarkMask = styled.div`
 
 export const LinkButtons = styled.div`
 /* border: 1px solid red; */
-  width:300px ;
+  width:220px ;
   position: fixed;
   top:28px ;
   right:15px ;
@@ -290,32 +270,6 @@ export const LinkButtons = styled.div`
     }
   }
   div:nth-child(3) {
-    display:flex ;
-    justify-content:center ;
-    align-items:center ;
-    background-color:${({ theme }) => theme.link_bg} ;
-    border-radius:50% ;
-    width:40px ;
-    height:40px ;
-    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
-      display: none;
-    }
-  }
-  div:nth-child(4) {
-    display:flex ;
-    justify-content:center ;
-    align-items:center ;
-    background-color:${({ theme }) => theme.link_bg} ;
-    border-radius:50% ;
-    width:40px ;
-    height:40px ;
-    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
-      display: none;
-    }
-  }
-  div:nth-child(5) {
     display:flex ;
     justify-content:center ;
     align-items:center ;
