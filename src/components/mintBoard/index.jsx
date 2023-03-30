@@ -210,7 +210,7 @@ const FaqContainer = styled.div`
 const FaqBoard = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
-  const [addr, setWalletAddress] = useState("");
+  const [addr, setWalletAddress] = useState(undefined);
   const [wlLoading, setWlLoading] = useState(false);
   const { address } = useAccount();
 
@@ -219,8 +219,7 @@ const FaqBoard = () => {
   }, [address])
 
   const WLchecker = async () => {
-    alert(addr)
-    if (addr === "" || addr === undefined) {
+    if (addr === undefined) {
       toast.error("Please connect your wallet or confirm the wallet address!", {
         theme: "dark",
       });
@@ -307,7 +306,7 @@ const FaqBoard = () => {
                 return (
                   <div style={{ display: "flex", gap: 12 }}>
                     <div className="mint-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
-                      <input type="text" placeholder='Wallet Address Here...' onChange={(e) => setWalletAddress(e.target.value)} />
+                      {account !== undefined ? null : <input type="text" placeholder='Wallet Address Here...' onChange={(e) => setWalletAddress(e.target.value)} />}
                       {wlLoading ? <span>Checking ...</span> : <span onClick={WLchecker}>Check WL</span>}
                     </div>
                     <div className="wallet-button" onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}>
