@@ -11,7 +11,7 @@ import axios from "axios";
 import { MouseContext } from 'contexts/mouse-context';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-import { useAccount } from 'wagmi';
+// import { useAccount } from 'wagmi';
 
 // style
 const FaqContainer = styled.div`
@@ -217,7 +217,7 @@ const FaqBoard = () => {
   const WLchecker = async () => {
     setWlLoading(true);
     const proof = await axios
-      .get(`https://daydream-backend.vercel.app/get/${addr}`)
+      .get(`https://d-connect-backend-main.vercel.app/get/${addr}`)
       .then((res) => {
         return res.data.proof;
       });
