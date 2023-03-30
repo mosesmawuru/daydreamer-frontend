@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 import bookImg from "assets/images/book.png";
-import scrollImg from "assets/images/scroll.png";
+import scrollImg from "assets/images/scroll.gif";
 
 export const LandingContainer = styled.div`
   width:100vw ;
@@ -69,10 +69,11 @@ export const LandingContainer = styled.div`
     background: url(${scrollImg});
     background-size: 100% 100%;
     width: 80vw;
-    height: 90vh;
+    height: 70vh;
     margin: auto;
     top: 5vh;
-    padding: 20vh 8vw;
+    left: -120px;
+    padding: 10vh 0vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,22 +85,37 @@ export const LandingContainer = styled.div`
       width: 88vw;
     }
     @media screen and (max-width: 768px) {
-      width: 100vw;
-    }@media screen and (max-width: 425px) {
-      width: 105w;
-      height: 460px;
       top: 15vh;
-      padding: 100px 8vw 80px 8vw;
+      left: -180px;
+      width: 110vw;
     }
-    @media screen and (max-width: 375px) {
-      height: 440px;
+    @media screen and (max-width: 425px) {
+      width: 125vw;
+      left: -140px;
+      height: 430px;
       top: 15vh;
-      padding: 90px 8vw 80px 8vw;
+      /* padding: 100px 0 80px 0; */
     }
-    @media screen and (max-width: 325px) {
+    @media screen and (max-width: 390px) {
+      width: 130vw;
+      left: -135px;
       height: 400px;
       top: 15vh;
-      padding: 90px 8vw 80px 8vw;
+      /* padding: 90px 0 80px 0; */
+    }
+    @media screen and (max-width: 375px) {
+      width: 130vw;
+      left: -135px;
+      height: 400px;
+      top: 15vh;
+      /* padding: 90px 0 80px 0; */
+    }
+    @media screen and (max-width: 320px) {
+      height: 360px;
+      left: -115px;
+      top: 15vh;
+      padding-top: 60px;
+      /* padding: 90px 0 80px 0; */
     }
     div.aboutus-title {     
       /* border :1px solid red ; */
@@ -108,12 +124,12 @@ export const LandingContainer = styled.div`
       font-weight: 400;
       font-size: 48px;
       padding-bottom: 20px;
-      transform: translateX(-70px);
+      transform: translateX(-30px);
       @media screen and (max-width: 425px) {
         font-size: 34px;
         letter-spacing: -2px;
-        transform: translateX(-20px);
         text-align: center;
+        transform: translateX(-15px);
       }
       @media screen and (max-width: 375px) {
         font-size: 30px;
@@ -121,7 +137,7 @@ export const LandingContainer = styled.div`
         transform: translateX(-20px);
       }
       @media screen and (max-width: 320px) {
-        transform: translateX(-18px);
+        transform: translateX(-12px);
         font-size: 27px;
         line-height: 30px;
         text-align: center;
@@ -129,7 +145,7 @@ export const LandingContainer = styled.div`
     }
     div.aboutus-body {
       /* border: 1px solid yellow; */
-      width: 80%;
+      width: 65%;
       overflow-y: scroll;
       display: flex;
       justify-content: space-around;
@@ -137,6 +153,8 @@ export const LandingContainer = styled.div`
       flex-wrap: wrap;      
       /* box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%); */
       border-radius: 10px;
+      
+      transform: translateX(60px); 
       img, p {
         margin-top: 10px;
         width: 60%;
@@ -146,6 +164,14 @@ export const LandingContainer = styled.div`
         @media screen and (max-width: 425px) {
           font-size: 18px;
         }
+      }
+      @media screen and (max-width: 425px) {
+        width: 66%;
+        transform: translateX(40px); 
+      }
+      @media screen and (max-width: 320px) {
+        width: 68%;
+        transform: translateX(40px); 
       }
     }
     div.aboutus-body::-webkit-scrollbar {
@@ -170,17 +196,17 @@ export const LandingContainer = styled.div`
 
     svg {
       position: absolute;
-      bottom: 70px;
-      right: 300px;
+      bottom: 30px;
+      right: 200px;
       @media screen and (max-width: 425px) {
-        right: 160px;
-        bottom: 40px;
+        right: 120px;
+        bottom: 30px;
       }
       @media screen and (max-width: 375px) {
-        right: 130px;
+        right: 110px;
       }
       @media screen and (max-width: 320px) {
-        right: 110px;
+        right: 90px;
       }
     }
 
