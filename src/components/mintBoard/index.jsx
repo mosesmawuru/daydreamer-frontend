@@ -56,6 +56,10 @@ const FaqContainer = styled.div`
   }
   @media screen and (max-width: 425px) {
     left: -40px;
+    }
+  @media screen and (max-width: 390px) {
+    left: -55px;
+    scale: 0.9;
   }
   @media screen and (max-width: 375px) {
     width: 110%;
@@ -194,13 +198,13 @@ const FaqContainer = styled.div`
     }
     img:first-child {
       transform: scale(0.8) translateY(10px) translateX(25px);
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 391px) {
         display: none;
       }
     }
     img:last-child {
       transform: translateY(-20px) translateX(-5px);
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 391px) {
       transform: scale(1.3) translateY(25vh) translateX(30vw);
       }
     }
