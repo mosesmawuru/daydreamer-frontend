@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { BsPlayFill, BsPauseFill } from 'react-icons/bs';
 
-import Sound from 'react-sound';
+// import Sound from 'react-sound';
 import styled from 'styled-components';
 
 import audio_path from 'assets/audio/bgmusic.mp3';
