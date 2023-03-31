@@ -39,7 +39,7 @@ const FaqContainer = styled.div`
       top: -500px;
     }
     100% {
-      top: 0px;
+      top: -40px;
     }
   }
   @keyframes RaiseUpFaqBoardMore {
@@ -205,7 +205,10 @@ const FaqContainer = styled.div`
     img:last-child {
       transform: translateY(-20px) translateX(-5px);
       @media screen and (max-width: 391px) {
-      transform: scale(1.3) translateY(25vh) translateX(30vw);
+        transform: scale(1.3) translateY(18vh) translateX(35vw);
+      }
+      @media screen and (max-width: 375px) {
+        transform: scale(1.3) translateY(25vh) translateX(30vw);
       }
     }
   }
