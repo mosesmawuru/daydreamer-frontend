@@ -13,11 +13,11 @@ import Cursor from "./components/cursor";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./themes/Themes";
 
-import SoundComponent from './components/sound';
+// import SoundComponent from './components/sound';
 
 // Import Hooks
 import { useDarkMode } from "./hooks/useDarkMode";
-import { useApolloSound } from "./hooks/useApolloSound";
+// import { useApolloSound } from "./hooks/useApolloSound";
 
 import Loading from "./components/loading";
 
@@ -63,13 +63,13 @@ function App() {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
-  const [isPlaying, soundToggler] = useApolloSound();
+  // const [isPlaying, soundToggler] = useApolloSound();
 
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
         <Cursor />
-        <SoundComponent isPlaying={isPlaying} soundToggler={soundToggler} />
+        {/* <SoundComponent isPlaying={isPlaying} soundToggler={soundToggler} /> */}
         <Suspense fallback={<Loading />}>
           <Router>
             <ThemeProvider theme={themeMode}>
