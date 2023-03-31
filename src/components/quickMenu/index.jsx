@@ -109,7 +109,7 @@ const MenuContainer = styled.div`
         box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
       }
 
-      @media screen and (max-width: 425px) {
+      @media screen and (max-width: 515px) {
         display: flex;
       }
     }

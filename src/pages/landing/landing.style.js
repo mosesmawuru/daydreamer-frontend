@@ -20,6 +20,10 @@ export const LandingContainer = styled.div`
   animation-duration:1.5s;
   animation-timing-function:linear ;
   animation-fill-mode: forwards;
+
+  @media screen and (max-width: 600px) {
+    height: 89vh;
+  }
 `;
 
 
@@ -86,7 +90,7 @@ export const LinkButtons = styled.div`
     animation-delay: 1.8s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -107,7 +111,7 @@ export const LinkButtons = styled.div`
     animation-delay: 2.1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -128,7 +132,7 @@ export const LinkButtons = styled.div`
     animation-delay: 2.4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -149,7 +153,7 @@ export const LinkButtons = styled.div`
     animation-delay: 2.7s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -169,7 +173,7 @@ export const LinkButtons = styled.div`
     top: 10px;
     left: calc(100vw - 320px);
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 515px) {
     width: 80px;
     left: unset;
     right: 25px;

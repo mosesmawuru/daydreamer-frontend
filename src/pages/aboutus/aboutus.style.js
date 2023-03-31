@@ -47,8 +47,8 @@ export const VisionContainer = styled.div`
       width: 115vw; 
       height: 70vh;
       top: 15vh;
-      margin-left: -200px;
-      padding: 10vh 0 10vh 450px;
+      margin-left: -26vw;
+      padding: 10vh 0 10vh 58.6vw;
     }
     @media screen and (max-width: 425px) {
       background: #fff;
@@ -79,43 +79,16 @@ export const VisionContainer = styled.div`
       }
     }
     div.ourvision-body {
-      /* border: 1px solid red; */
       font-family: "Pacifico";
       font-weight: 500;
       font-size: 26px;
       line-height: 30px;
       width: 70%;
-      right: 0;
       overflow-y: auto;
-      /* margin-bottom: 40px; */
-      /* box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%); */
-      div {
-        margin-top: 8px;
-        div.ourvision-text-left {
-          padding-left: 20px;
-        }
-        div.ourvision-text-right {
-          padding-right: 20px;
-        }
+      @media screen and (max-width: 768px) {
       }
-      div:nth-child(1), div:nth-child(3) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @media screen and (max-width: 1440px) {
-          flex-direction: column;
-          div.aboutus-text-left {
-            padding-left: 0px;
-          }
-          div.aboutus-text-right {
-            padding-right: 0px;
-          }
-        }
-      }
-
       @media screen and (max-width: 425px) {
         font-size: 20px;
-        /* margin-bottom: 0; */
       }
       @media screen and (max-width: 375px) {
         font-size: 18px;
@@ -135,10 +108,14 @@ export const VisionContainer = styled.div`
         width: 300px;
         height: 300px;
       }
-      @media screen and (max-width: 425px) {
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+      /* @media screen and (max-width: 425px) {
         right: -60px;
         bottom: -20px;
-      }
+      } */
     }
     
     svg {
@@ -244,7 +221,7 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -257,7 +234,7 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -270,7 +247,7 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -283,11 +260,11 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 515px) {
     width: 80px;
     left: unset;
     right: 25px;

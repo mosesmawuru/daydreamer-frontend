@@ -68,7 +68,7 @@ export const LinkButtons = styled.div`
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -88,7 +88,7 @@ export const LinkButtons = styled.div`
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -109,7 +109,7 @@ export const LinkButtons = styled.div`
     animation-delay: 2.4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -130,7 +130,7 @@ export const LinkButtons = styled.div`
     animation-delay: 2.7s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -145,10 +145,10 @@ export const LinkButtons = styled.div`
   @media screen and (max-width: 768px) {
     position: fixed;
     top: 10px;
-    left: calc(100vw - 240px);
+    left: calc(100vw - 320px);
     transform: rotate(0);
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 515px) {
     width: 80px;
     left: unset;
     right: 25px;
@@ -156,9 +156,6 @@ export const LinkButtons = styled.div`
   @media screen and (max-width: 320px) {
     justify-content: flex-end;
     padding-left: 5px;
-    div {
-      margin: 5px;
-    }
   }
   
   @keyframes LinkAnimation {
@@ -210,8 +207,11 @@ export const ChildrenArea = styled.div`
     }
     @media screen and (max-width: 768px) {
       top: 180px;
-      left: 300px;
+      left: 39vw;
       transform: scale(0.8) rotate(-3deg);
+    }
+    @media screen and (max-width: 500px) {
+      left: 35vw;
     }
     @media screen and (max-width: 425px) {
       left: calc((100vw - 150px) / 2);

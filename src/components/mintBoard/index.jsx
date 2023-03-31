@@ -52,7 +52,7 @@ const FaqContainer = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    right: calc((100vw - 400px)/2);
+    left: calc((100vw - 500px)/2);
   }
   @media screen and (max-width: 425px) {
     left: -40px;

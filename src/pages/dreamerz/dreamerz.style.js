@@ -254,7 +254,7 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -267,7 +267,7 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -280,7 +280,7 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
@@ -293,14 +293,14 @@ export const LinkButtons = styled.div`
     width:40px ;
     height:40px ;
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 515px) {
       display: none;
     }
   }
   /* @media screen and (max-width: 320px) {
     width: 195px;
   } */
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 515px) {
     width: 80px;
     left: unset;
     right: 25px;

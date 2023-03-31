@@ -90,7 +90,7 @@ const SoundContainer = styled.div`
     height: 40px;
     z-index: 9999;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 515px) {
     right: 145px;
   }
   @media screen and (max-width: 375px) {
