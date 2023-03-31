@@ -4,7 +4,7 @@ export const TitleContainer = styled.div`
   position: absolute;
   width: 100%;
   top: 52vh;
-  padding-left: 65px;
+  padding-left: 115px;
   display: flex;
   justify-content: flex-start;
   align-items: center;

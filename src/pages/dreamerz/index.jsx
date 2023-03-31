@@ -18,7 +18,6 @@ import Logo from '../../components/logo';
 import PageFlip from '../../components/pageFlip';
 
 import nft1 from "assets/images/nfts/day.gif";
-import cowboy from "assets/images/graphic/666.gif";
 
 import opensea from 'assets/images/icons/os.png'
 import whitepaper from 'assets/images/icons/wp.png'

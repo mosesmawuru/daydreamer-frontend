@@ -174,16 +174,6 @@ export const LandingContainer = styled.div`
       bottom: 70px;
       z-index: 998;
       margin: auto;
-      @media screen and (max-width: 425px) {
-        right: 160px;
-        bottom: 40px;
-      }
-      @media screen and (max-width: 375px) {
-        right: 130px;
-      }
-      @media screen and (max-width: 320px) {
-        right: 110px;
-      }
     }
 
     svg:hover {

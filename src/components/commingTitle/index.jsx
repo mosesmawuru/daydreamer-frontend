@@ -43,7 +43,7 @@ const Title = () => {
         <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}>C</div>
         <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}>o</div>
         <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}>m</div>
-        <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}>m</div>
+        <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}></div>
         <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}>i</div>
         <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}>n</div>
         <div className='title' onMouseEnter={addAnimationToLetter} onMouseLeave={removeAnimationFromLetter}>g</div>

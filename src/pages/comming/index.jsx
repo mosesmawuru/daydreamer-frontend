@@ -47,7 +47,7 @@ const Comming = (props) => {
 
       <ChildrenArea>
         <div>
-          <Title text="Comming Soon" />
+          <Title text="Coming Soon" />
           <LinkButtons>
             <Switch className="switch" onThemeClick={props.onThemeClick} />
             <div>

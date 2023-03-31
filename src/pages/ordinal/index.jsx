@@ -17,7 +17,6 @@ import Logo from '../../components/logo';
 import PageFlip from '../../components/pageFlipOrdinal';
 
 import nft1 from "assets/images/nfts/ordinal/ordinal.gif";
-import peasant from "assets/images/graphic/Dancing Peasant.gif";
 
 import opensea from 'assets/images/icons/os.png'
 import whitepaper from 'assets/images/icons/wp.png'

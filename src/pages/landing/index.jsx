@@ -38,6 +38,7 @@ const Landing = (props) => {
       {loading ? <Board><Loading /></Board> : null}
       <BgComponent />
       <Title text="Day Dreamerz" />
+      afasdasdgsdgasdfasdf
       <LinkButtons>
         <Switch className="switch" onThemeClick={props.onThemeClick} />
         <div>
