@@ -25,7 +25,7 @@ export const LandingContainer = styled.div`
   animation-timing-function:linear ;
   animation-fill-mode: forwards;
 
-  img.peasant {
+  /* img.peasant {
     display: none;
     position: absolute;
     left: calc((100vw - 400px) / 2);
@@ -38,7 +38,7 @@ export const LandingContainer = styled.div`
     }
     @media screen and (max-width: 425px) {
     }
-  }
+  } */
 
   .book {
     position: relative;
@@ -83,13 +83,12 @@ export const LandingContainer = styled.div`
     height: 90vh;
     margin: auto;
     top: 5vh;
-    padding: 20vh 8vw;
+    padding: 110px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     display: none;
-    /* border: 1px solid red; */
     @media screen and (max-width: 1020px) {
       display: flex;
       width: 88vw;
@@ -99,19 +98,10 @@ export const LandingContainer = styled.div`
     }
     @media screen and (max-width: 425px) {
       width: 105w;
-      height: 460px;
-      top: 15vh;
-      padding: 100px 8vw 80px 8vw;
     }
     @media screen and (max-width: 375px) {
-      height: 440px;
-      top: 15vh;
-      padding: 80px 8vw;
     }
     @media screen and (max-width: 325px) {
-      height: 400px;
-      top: 15vh;
-      padding: 80px 8vw 80px 8vw;
     }
     div.aboutus-title {     
       /* border :1px solid red ; */
@@ -120,33 +110,22 @@ export const LandingContainer = styled.div`
       font-weight: 400;
       font-size: 48px;
       padding-bottom: 20px;
-      transform: translateX(-70px);
       text-align: center;
-      margin-right: 50px;
       @media screen and (max-width: 425px) {
         font-size: 35px;
         letter-spacing: -2px;
-        transform: translateX(-20px);
-        text-align: center;
-        margin-right: 35px;
       }
       @media screen and (max-width: 375px) {
         font-size: 35px;
         letter-spacing: -2px;
-        transform: translateX(-20px);
-        text-align: center;
-        margin-right: 20px;
       }
       @media screen and (max-width: 320px) {
-        transform: translateX(25px);
         line-height: 30px;
-        text-align: center;
-        margin-right: 40px;
       }
     }
     div.aboutus-body {
       /* border: 1px solid yellow; */
-      width: 80%;
+      width: 90%;
       overflow-y: scroll;
       display: flex;
       justify-content: space-around;
@@ -156,7 +135,7 @@ export const LandingContainer = styled.div`
       border-radius: 10px;
       img, p {
         margin-top: 10px;
-        width: 80%;
+        width: 100%;
         font-family: "Pacifico";
         font-size: 20px;
 
@@ -187,19 +166,9 @@ export const LandingContainer = styled.div`
     }
     
     svg {
-      position: absolute;
       bottom: 70px;
-      right: 300px;
-      @media screen and (max-width: 425px) {
-        right: 160px;
-        bottom: 40px;
-      }
-      @media screen and (max-width: 375px) {
-        right: 130px;
-      }
-      @media screen and (max-width: 320px) {
-        right: 110px;
-      }
+      z-index: 998;
+      margin: auto;
     }
 
     svg:hover {

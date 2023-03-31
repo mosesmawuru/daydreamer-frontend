@@ -89,7 +89,7 @@ const Intro = (props) => {
         <VscTriangleDown size={40} opacity={0.6} onClick={scrollUp} />
         <img className='nav-child3' src='https://drive.google.com/uc?id=1yI_F33-TS1R_lWbEWojUJwZIuklBC6Uc' alt="child1" />
       </div>
-      <img src={cowboy} alt="cowboy" className='cowboy' />
+      {/* <img src={cowboy} alt="cowboy" className='cowboy' /> */}
       <Logo />
       <QuickMenu setMask={setMask} />
     </LandingContainer >

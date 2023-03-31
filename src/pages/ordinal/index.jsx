@@ -90,7 +90,7 @@ const Intro = (props) => {
         <VscTriangleDown size={40} opacity={0.6} onClick={scrollUp} />
         <img className='nav-child3' src="https://drive.google.com/uc?id=139iyqtbq3Jg7df8KZOnVFczK0cXhwFRf" alt="child1" onClick={onChildClick} onMouseOver={() => onChildOver()} onMouseOut={() => onChildLeave()} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")} />
       </div>
-      <img src={peasant} alt="cowboy" className='peasant' />
+      {/* <img src={peasant} alt="cowboy" className='peasant' /> */}
       <Logo />
       <QuickMenu setMask={setMask} />
     </LandingContainer >

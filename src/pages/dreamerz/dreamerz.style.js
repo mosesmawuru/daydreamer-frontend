@@ -28,7 +28,7 @@ export const LandingContainer = styled.div`
   animation-duration:1.5s;
   animation-timing-function:linear ;
   animation-fill-mode: forwards;
-
+/* 
   img.cowboy {
     display: none;
     position: absolute;
@@ -42,7 +42,7 @@ export const LandingContainer = styled.div`
     }
     @media screen and (max-width: 425px) {
     }
-  }
+  } */
 
   .book {
     position: relative;
@@ -87,34 +87,25 @@ export const LandingContainer = styled.div`
     height: 90vh;
     margin: auto;
     top: 5vh;
-    padding: 20vh 8vw;
+    padding: 110px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     display: none;
-    /* border: 1px solid red; */
     @media screen and (max-width: 1020px) {
       display: flex;
       width: 88vw;
     }
     @media screen and (max-width: 768px) {
       width: 100vw;
-    }@media screen and (max-width: 425px) {
+    }
+    @media screen and (max-width: 425px) {
       width: 105w;
-      height: 460px;
-      top: 15vh;
-      padding: 100px 8vw 80px 8vw;
     }
     @media screen and (max-width: 375px) {
-      height: 440px;
-      top: 15vh;
-      padding: 90px 8vw 80px 8vw;
     }
     @media screen and (max-width: 325px) {
-      height: 400px;
-      top: 15vh;
-      padding: 90px 8vw 80px 8vw;
     }
     div.aboutus-title {     
       /* border :1px solid red ; */
@@ -123,20 +114,16 @@ export const LandingContainer = styled.div`
       font-weight: 400;
       font-size: 48px;
       padding-bottom: 20px;
-      transform: translateX(-70px);
       @media screen and (max-width: 425px) {
         font-size: 34px;
         letter-spacing: -2px;
-        transform: translateX(-20px);
         text-align: center;
       }
       @media screen and (max-width: 375px) {
         font-size: 30px;
         letter-spacing: -2px;
-        transform: translateX(-20px);
       }
       @media screen and (max-width: 320px) {
-        transform: translateX(-18px);
         font-size: 27px;
         line-height: 30px;
         text-align: center;
@@ -144,7 +131,7 @@ export const LandingContainer = styled.div`
     }
     div.aboutus-body {
       /* border: 1px solid yellow; */
-      width: 80%;
+      width: 90%;
       overflow-y: scroll;
       display: flex;
       justify-content: space-around;
@@ -154,7 +141,7 @@ export const LandingContainer = styled.div`
       border-radius: 10px;
       img, p {
         margin-top: 10px;
-        width: 60%;
+        width: 100%;
         font-family: "Pacifico";
         font-size: 20px;
 
@@ -184,10 +171,9 @@ export const LandingContainer = styled.div`
     }
 
     svg {
-      position: absolute;
       bottom: 70px;
-      right: 300px;
       z-index: 998;
+      margin: auto;
       @media screen and (max-width: 425px) {
         right: 160px;
         bottom: 40px;
