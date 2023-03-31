@@ -43,6 +43,13 @@ export const LandingContainer = styled.div`
     @media screen and (max-width: 425px) {
     }
   } */
+  
+  @media screen and (max-width: 600px) {
+    height: 89vh;
+  }
+  @media screen and (max-width: 375px) {
+    height: 88vh;
+  }
 
   .book {
     position: relative;

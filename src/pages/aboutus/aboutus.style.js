@@ -23,6 +23,13 @@ export const VisionContainer = styled.div`
   animation-duration:1.5s;
   animation-timing-function:linear ;
   animation-fill-mode: forwards;
+  
+  @media screen and (max-width: 600px) {
+    height: 89vh;
+  }
+  @media screen and (max-width: 375px) {
+    height: 88vh;
+  }
   div.scroll {
     position: relative;
     background: url("https://drive.google.com/uc?id=1sMPJk-iiVxlBtyEIhxRvWJama27awWng");

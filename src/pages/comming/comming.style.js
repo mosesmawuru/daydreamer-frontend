@@ -27,6 +27,12 @@ export const LandingContainer = styled.div`
   width:100vw ;
   height:100vh ;
   position: relative ;
+  @media screen and (max-width: 600px) {
+    height: 89vh;
+  }
+  @media screen and (max-width: 375px) {
+    height: 88vh;
+  }
 `;
 
 
