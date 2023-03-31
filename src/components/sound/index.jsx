@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BsPlayFill, BsPauseFill } from 'react-icons/bs';
 
 import Sound from 'react-sound';
@@ -102,14 +102,14 @@ const SoundComponent = ({ isPlaying, soundToggler }) => {
 
 
 
-  // useEffect(() => {
-  //   document.body.addEventListener("click", playAudio);
-  // }, [])
+  useEffect(() => {
+    document.body.addEventListener("click", playAudio);
+  }, [])
 
-  // const playAudio = async () => {
-  //   await soundToggler();
-  //   document.body.removeEventListener("click", playAudio);
-  // }
+  const playAudio = async () => {
+    await soundToggler();
+    document.body.removeEventListener("click", playAudio);
+  }
 
   const { cursorChangeHandler } = useContext(MouseContext);
 
