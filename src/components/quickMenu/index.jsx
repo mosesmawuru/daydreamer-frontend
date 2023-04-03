@@ -1,8 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
-// import child1 from 'assets/images/child3.png'
-// import child2 from 'assets/images/child4.png'
 import opensea from 'assets/images/icons/os.png'
 import whitepaper from 'assets/images/icons/wp.png'
 
@@ -28,18 +25,6 @@ const MenuContainer = styled.div`
     align-items: center;
 
     box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
-    /* div:nth-child(1), div:nth-child(3) {
-      width: 50px;
-      height: 70px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    } */
-    /* div.class1:hover {
-      cursor: pointer;
-    } */
-
     div.class1 {
       position: absolute;
       color: #fff;
@@ -174,9 +159,7 @@ const Menu = (props) => {
   return (
     <MenuContainer>
       <div className='clickable-area' onClick={onMenuClick}>
-        {/* <div><img src={child1} alt="boy1" /></div> */}
         <div className='class1'>QUICK MENU</div>
-        {/* <div><img src={child2} alt="boy2" /></div> */}
       </div>
       <div className='menu-body'>
         <span onClick={onClose}><FaTimes /></span>

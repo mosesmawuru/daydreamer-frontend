@@ -17,8 +17,6 @@ export const VisionContainer = styled.div`
   width:100vw ;
   height:100vh ;
   position: relative ;
-  /* background: ${({ theme }) => theme.container_bg}; */
-
   animation-name: ${({ theme }) => theme.container_bg_animation} ;    
   animation-duration:1.5s;
   animation-timing-function:linear ;
@@ -36,14 +34,12 @@ export const VisionContainer = styled.div`
     background-size: 100% 100%;
     width: 70vw;
     height: 90vh; 
-    /* margin: auto; */
     top: 5vh;
     padding: 15vh 0 15vh 35vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
     @media screen and (max-width: 1440px) {
       padding: 15vh 0 15vh 520px;
     }
@@ -111,7 +107,6 @@ export const VisionContainer = styled.div`
       transform: translateX(140px);
       z-index: 999;
       @media screen and (max-width: 880px) {
-        /* display: none; */
         width: 300px;
         height: 300px;
       }
@@ -119,10 +114,6 @@ export const VisionContainer = styled.div`
       @media screen and (max-width: 768px) {
         display: none;
       }
-      /* @media screen and (max-width: 425px) {
-        right: -60px;
-        bottom: -20px;
-      } */
     }
     
     svg {
@@ -208,7 +199,6 @@ export const DarkMask = styled.div`
 `;
 
 export const LinkButtons = styled.div`
-/* border: 1px solid red; */
   width:300px ;
   position: fixed;
   top:28px ;
@@ -217,7 +207,6 @@ export const LinkButtons = styled.div`
   justify-content:space-around ;
   align-items:center ;
   div:nth-child(1) {
-    /* cursor: pointer; */
   }
   div:nth-child(2) {
     display:flex ;

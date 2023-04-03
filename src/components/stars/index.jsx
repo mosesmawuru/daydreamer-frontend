@@ -1,8 +1,5 @@
 import React from 'react'
-
 import styled from 'styled-components';
-
-// import cloud from "assets/images/stars.png";
 
 const StarsContainer = styled.div`
   @keyframes StarsAnimation {
@@ -15,7 +12,6 @@ const Stars = () => {
 
   return (
     <StarsContainer>
-      {/* <img src={cloud} alt="cloud" /> */}
     </StarsContainer>
   )
 }

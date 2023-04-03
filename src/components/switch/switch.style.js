@@ -6,7 +6,6 @@ export const SwitchContainer = styled.div`
   height: 40px ;
   background-color:  ${({ theme }) => theme.switchContainerBG};
   display: flex;
-  /* justify-content:center ; */
   align-items: center ;
   box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%);
 `;

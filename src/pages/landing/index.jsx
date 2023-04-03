@@ -32,7 +32,6 @@ const Landing = (props) => {
     }, 3500);
   }, [])
 
-  // console.log(123123123, props);
   return (
     <LandingContainer>
       {loading ? <Board><Loading /></Board> : null}

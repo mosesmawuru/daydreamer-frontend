@@ -7,8 +7,6 @@ import {
   LinkButtons
 } from './faq.style'
 
-
-// import ChildrenComponent from '../../components/children';
 import FaqBoard from '../../components/faqBoard';
 import BgComponent from '../../components/background2';
 
@@ -24,7 +22,6 @@ const Landing = (props) => {
 
   const [isMask, setMask] = useState(false);
 
-  // console.log(123123123, props);
   return (
     <LandingContainer>
       <BgComponent />
@@ -43,7 +40,6 @@ const Landing = (props) => {
           <a href="https://whitepaper.daydreamerz.io/" rel="noreferrer" target={'_blank'} style={{ width: "60%", height: '60%', color: '#FFF' }}><img src={whitepaper} alt="" style={{ width: "100%", height: "100%", scale: "1.5" }} /></a>
         </div>
       </LinkButtons>
-      {/* <ChildrenComponent isPosLeftChildren={true} setMask={setMask} /> */}
       <FaqBoard />
       <Logo />
       <DarkMask isMask={isMask}></DarkMask>

@@ -1,6 +1,6 @@
 import React from "react";
 
-// Import Layouts Components
+// Import Layouts Coxmponents
 // import Header from "./header";
 
 // Import Styled Components

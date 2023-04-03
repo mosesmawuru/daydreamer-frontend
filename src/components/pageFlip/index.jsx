@@ -1,11 +1,8 @@
 import React from "react";
 import HTMLFlipBook from "react-pageflip";
 import styled from "styled-components";
-
-
 import FlipBoard1 from "assets/images/paper1.png";
 import FlipBoard2 from "assets/images/paper2.png";
-
 import nft1 from "assets/images/nfts/1.png";
 import nft2 from "assets/images/nfts/2.png";
 import nft3 from "assets/images/nfts/3.png";
@@ -32,16 +29,11 @@ import nft23 from "assets/images/nfts/23.png";
 import nft24 from "assets/images/nfts/24.png";
 
 const FlipBookContainer = styled.div`
-  /* border: 1px solid green; */
   display: flex;
   justify-content: center;
   align-items: center;
   .demoPage {
-    transition: all 0s ease !important;  
-    /* vertical-align: middle; */
-    /* width: 100%;
-    height: 100%; */
-    /* border: 1px solid red; */
+    transition: all 0s ease !important; 
     div.text-container {
       width: 100%;
       height: 100%;
@@ -123,11 +115,8 @@ const PageFlip = () => {
                 Our project is founded on the fundamental belief that each child has a unique dream that they strive to achieve when they grow up. <br />
                 We are dedicated to preserving the magic of dreaming and creating a platform that fosters connections and shared passions among dreamers.
               </p>
-              {/* <img src={nft3} alt="nft1" />
-              <img src={nft4} alt="nft1" /> */}
             </div>
           </div>
-          {/* <div className="text-next">Next</div> */}
         </div>
         <div className="demoPage right">
           <div className="text-container">

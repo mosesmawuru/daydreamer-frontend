@@ -171,6 +171,10 @@ const FaqContainer = styled.div`
 
 const stickyData = [
   {
+    title: "Q. What are the Mint Details of Day Dreamerz?",
+    desc: "Supply: 2525<br  > WL Mint Price: TBA<br  > public Mint Price: TBA<br  > Mint Date & Time: TBA<br  > Chain: ETH"
+  },
+  {
     title: "Q. How to mint Ordinal Dreamerz?",
     desc: "The minting process for Ordinal Dreamerz will take place on the ETH Chain and holders can claim their Ordinal NFT by burning their ETH NFT. Once the burning process is complete, the Ordinal Dreamerz NFT will be airdropped to holder. "
   },
@@ -203,7 +207,6 @@ const stickyData = [
 const FaqBoard = () => {
 
   const onStickyClick = (e, key) => {
-    // console.log(123123, e.target);
     const target = document.getElementById("substicky-" + key)
     target.style.animationName = "FallStickyAnimation";
     target.style.zIndex = 6;
@@ -215,45 +218,20 @@ const FaqBoard = () => {
   }
 
   const { cursorChangeHandler } = useContext(MouseContext);
-  // console.log(cursorType);
-
-  // ------------------- drag --------------------------
-  // const [isMouseDowned, setDown] = useState(false);
-  // const [clientX, setClientX] = useState(0);
-  // const [clientY, setClientY] = useState(0);
 
   const dragMouseDown = (e) => {
-    // setDown(true);
     cursorChangeHandler("clicked");
-    // setClientX(e.clientX);
-    // setClientY(e.clientY);
   }
   const dragMouseUp = () => {
-    // setDown(false);
     cursorChangeHandler("hovered");
   }
-
-  const mouseMove = (e) => {
-    // if (!isMouseDowned) return;
-    // e.target.style.zIndex = "99999";
-    // var x = e.target.offsetLeft - (clientX - e.clientX);
-    // var y = e.target.offsetTop - (clientY - e.clientY);
-
-    // console.log(3333333, x);
-    // console.log(4444444, y);
-
-    // e.target.style.transform = `translate(${x}px, ${y}px)`;
-
-  }
-
-  // ---------------------------------------------------
 
   return (
     <FaqContainer>
       <div className='sticky'>
         <img src={sticky} alt="sticky" />
       </div>
-      {stickyData.map((item, key) => (<div className="substicky" id={`substicky-${key}`} onClick={e => onStickyClick(e, key)} onMouseDown={dragMouseDown} onMouseMove={mouseMove} onMouseOver={() => cursorChangeHandler("hovered")} onMouseOut={() => cursorChangeHandler("")} onMouseUp={dragMouseUp}>
+      {stickyData.map((item, key) => (<div className="substicky" id={`substicky-${key}`} onClick={e => onStickyClick(e, key)} onMouseDown={dragMouseDown} onMouseOver={() => cursorChangeHandler("hovered")} onMouseOut={() => cursorChangeHandler("")} onMouseUp={dragMouseUp}>
         <img src={substicky} alt="substicky" />
         <div>
           <span>{item.title}</span>

@@ -17,7 +17,6 @@ export const LandingContainer = styled.div`
   width:100vw ;
   height:100vh ;
   position: relative ;
-  /* background: ${({ theme }) => theme.container_bg}; */
 
   animation-name: ${({ theme }) => theme.container_bg_animation} ;    
   animation-duration:1.5s;
@@ -37,7 +36,6 @@ export const LandingContainer = styled.div`
 
 
 export const LinkButtons = styled.div`
-/* border: 1px solid red; */
   width:300px ;
   height: 80px;
   position: relative ;
@@ -48,7 +46,6 @@ export const LinkButtons = styled.div`
   align-items:center ;
   transform: rotate(-2deg);
   div:nth-child(1) {
-    /* cursor: pointer; */
   }
   div.switch {    
     opacity: 0;

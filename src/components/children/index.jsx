@@ -4,21 +4,6 @@ import { useNavigate } from "react-router-dom"
 import styled from 'styled-components';
 
 import { MouseContext } from "../../contexts/mouse-context";
-
-// import aboutus from "assets/images/graphic/55.gif";
-// import ourvision from "assets/images/graphic/Broom peasant.gif";
-// import artflexing from "assets/images/graphic/bitcoing cowboy.gif";
-// import faq from "assets/images/graphic/Without hover Super hero.gif";
-// import mint from "assets/images/graphic/88.gif";
-// import comming from "assets/images/graphic/Knight Without hover.gif";
-
-// import aboutus1 from "assets/images/graphic/77.gif";
-// import ourvision1 from "assets/images/graphic/66.gif";
-// import artflexing1 from "assets/images/graphic/44.gif";
-// import faq1 from "assets/images/graphic/on hover.gif";
-// import mint1 from "assets/images/graphic/11.gif";
-// import comming1 from "assets/images/graphic/Knight on hover.gif";
-
 const ChildrenContainer = styled.div`
   
   div.children {
@@ -47,7 +32,6 @@ const ChildrenContainer = styled.div`
           right: -28px;
           transform: scale(0.8);
           z-index: 998;
-          /* visibility: hidden; */
           display: none;
         }
         img:nth-child(2) {

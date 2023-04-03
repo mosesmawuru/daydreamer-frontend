@@ -17,10 +17,7 @@ const WalletContainer = styled.div`
   flex-direction: column;
   position: absolute;
   top:-300px;
-  /* border: 1px solid red; */
   row-gap: 10px;
-  /* display: none; */
-
   animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;

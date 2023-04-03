@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import { FaTwitter, FaDiscord } from 'react-icons/fa';
 import { VscTriangleDown } from 'react-icons/vsc';
 
@@ -17,32 +16,9 @@ import Logo from '../../components/logo';
 import opensea from 'assets/images/icons/os.png'
 import whitepaper from 'assets/images/icons/wp.png'
 
-// import child1 from 'assets/images/child1.png';
-// import child2 from 'assets/images/graphic/333.gif';
-
-// import nft2 from "assets/images/nfts/2.png";
-// import nft4 from "assets/images/nfts/4.png";
-
-// import { MouseContext } from "../../contexts/mouse-context";
-
 const AboutUs = (props) => {
 
-  // const navigate = useNavigate();
   const [isMask, setMask] = useState(false);
-  // const { cursorChangeHandler } = useContext(MouseContext);
-
-  // const onChildClick = () => {
-  //   navigate('/');
-  // }
-
-  // const onChildOver = () => {
-  //   cursorChangeHandler("hovered")
-  //   setMask(true);
-  // }
-  // const onChildLeave = () => {
-  //   cursorChangeHandler("")
-  //   setMask(false);
-  // }
 
   const scrollUp = () => {
     const parentEle = document.getElementsByClassName("ourvision-body")[0];
@@ -98,12 +74,7 @@ const AboutUs = (props) => {
         </div>
         <VscTriangleDown size={40} opacity={0.6} onClick={scrollUp} />
         <img src="https://drive.google.com/uc?id=1KeSFl6n0ehSm_Hb3UMcvjtv5bfG1adhK" alt="child1" />
-        {/* <img src={child2} alt="child1" onClick={onChildClick} onMouseOver={() => onChildOver()} onMouseOut={() => onChildLeave()} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")} /> */}
       </div>
-      {/* <div className="children">
-        <img src={child1} alt="child1" onClick={onChildClick} onMouseOver={() => onChildOver()} onMouseOut={() => onChildLeave()} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")} />
-        <img src={child2} alt="child2" onClick={onChildClick} onMouseOver={() => onChildOver()} onMouseOut={() => onChildLeave()} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")} />
-      </div> */}
       <Logo />
       <QuickMenu setMask={setMask} />
     </VisionContainer >

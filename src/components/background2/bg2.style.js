@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-position: absolute;
-  /* border: 1px solid red; */
+  position: absolute;
 `;
 
 export const StarsImgs = styled.div`
@@ -10,12 +9,6 @@ export const StarsImgs = styled.div`
   width: 100vw ;
   height: 100vh;
   float: right ;
-  /* div:nth-child(1) {
-    animation-name:StarsAnimation ;    
-    animation-duration: 1s;
-    animation-timing-function:ease-out ;
-    animation-iteration-count:infinite ;
-  } */
   div:nth-child(1) {
     position:absolute ;
     top:44px ;
@@ -129,7 +122,6 @@ transform: rotateY(180deg);
     left: 500px ;
     animation-name:cloudAnimation ;
     animation-duration: 3.5s;
-    /* animation-delay: 0s; */
     animation-timing-function:ease-out ;
     animation-iteration-count:infinite ;
     transform: rotateY(180deg);
@@ -152,7 +144,6 @@ transform: rotateY(180deg);
       0% {
         transform: rotate(-180deg);
         left: -100%;
-        /* bottom: 100px; */
       }
       100% {
         transform: rotate(0deg);
@@ -169,11 +160,9 @@ transform: rotateY(180deg);
     top: 60px ;
     width: 200px;
     left: 100px;
-    /* transform:  rotate(240deg);  */
     img {
       width: 80%;
       height: 80%;
-      /* opacity: 0.7; */
     }
 
     animation-name: ${({ theme }) => theme.moonAnimationName};
@@ -212,12 +201,10 @@ transform: rotateY(180deg);
     }
   }
   div:nth-child(6) {
-    /* opacity: ${({ theme }) => theme.rainbowVisible}; */
     position: absolute ;
     top: 60px ;
     width: 200px;
     left: 100px;
-    /* transform: scale(1.2); */
     img {
       width: 100%;
       height: 100%;

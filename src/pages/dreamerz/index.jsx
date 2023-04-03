@@ -22,26 +22,9 @@ import nft1 from "assets/images/nfts/day.gif";
 import opensea from 'assets/images/icons/os.png'
 import whitepaper from 'assets/images/icons/wp.png'
 
-// import { MouseContext } from "../../contexts/mouse-context";
 
 const Intro = (props) => {
-  // const navigate = useNavigate();
-
   const [isMask, setMask] = useState(false);
-  // const { cursorChangeHandler } = useContext(MouseContext);
-
-  // const onChildClick = () => {
-  //   navigate('/');
-  // }
-
-  // const onChildOver = () => {
-  //   cursorChangeHandler("hovered")
-  //   setMask(true);
-  // }
-  // const onChildLeave = () => {
-  //   cursorChangeHandler("")
-  //   setMask(false);
-  // }
 
   const scrollUp = () => {
     const parentEle = document.getElementsByClassName("aboutus-body")[0];
@@ -49,7 +32,6 @@ const Intro = (props) => {
     parentEle.scrollTop = top + 20;
   }
 
-  // console.log(123123123, props);
   return (
     <LandingContainer>
       <BgComponent />
@@ -88,7 +70,6 @@ const Intro = (props) => {
         <VscTriangleDown size={40} opacity={0.6} onClick={scrollUp} />
         <img className='nav-child3' src='https://drive.google.com/uc?id=1yI_F33-TS1R_lWbEWojUJwZIuklBC6Uc' alt="child1" />
       </div>
-      {/* <img src={cowboy} alt="cowboy" className='cowboy' /> */}
       <Logo />
       <QuickMenu setMask={setMask} />
     </LandingContainer >

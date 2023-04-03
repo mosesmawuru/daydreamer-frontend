@@ -1,6 +1,4 @@
 import React, { useContext, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
 import {
   LandingContainer,
   ChildrenArea,
@@ -23,24 +21,17 @@ import whitepaper from 'assets/images/icons/wp.png'
 import { MouseContext } from "../../contexts/mouse-context";
 
 const Comming = (props) => {
-  // const navigate = useNavigate();
 
   const [isMask, setMask] = useState(false);
   const { cursorChangeHandler } = useContext(MouseContext);
 
-  // const onChildClick = () => {
-  //   window.location.assign('https://whitepaper.daydreamerz.io/artwork');
-  // }
   const onChildOver = () => {
     cursorChangeHandler("hovered")
-    // setMask(true);
   }
   const onChildLeave = () => {
     cursorChangeHandler("")
-    // setMask(false);
   }
 
-  // console.log(123123123, props);
   return (
     <LandingContainer>
       <BgComponent />
@@ -64,7 +55,6 @@ const Comming = (props) => {
             </div>
           </LinkButtons>
           <DarkMask isMask={isMask}></DarkMask>
-          {/* <div className='return' onMouseOver={() => onChildOver()} onMouseOut={() => onChildLeave()} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")} onClick={() => navigate('/')}></div> */}
           <a href="https://whitepaper.daydreamerz.io/artwork" rel="noreferrer" target={'_blank'} ><div className="logo" onMouseOver={() => onChildOver()} onMouseOut={() => onChildLeave()} onMouseDown={() => cursorChangeHandler("clicked")} onMouseUp={() => cursorChangeHandler("hovered")}></div></a>
         </div>
       </ChildrenArea>

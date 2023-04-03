@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-position: absolute;
-  /* border: 1px solid red; */
+  position: absolute;
 `;
 
 export const StarsImgs = styled.div`
@@ -10,12 +9,6 @@ export const StarsImgs = styled.div`
   width: 100vw ;
   height: 100vh;
   float: right ;
-  /* div:nth-child(1) {
-    animation-name:StarsAnimation ;    
-    animation-duration: 1s;
-    animation-timing-function:ease-out ;
-    animation-iteration-count:infinite ;
-  } */
   div:nth-child(1) {
     position:absolute ;
     top:44px ;
@@ -177,8 +170,6 @@ export const Clouds = styled.div`
     }
   }
   div:nth-child(5) {    
-    /* transition: 3s;
-    opacity: ${({ theme }) => theme.hugeMoonVisible}; */
     position: absolute ;
     top: 1px ;
     left: 1px ;
@@ -186,7 +177,6 @@ export const Clouds = styled.div`
     img {
       width: 80%;
       height: 80%;
-      /* opacity: 0.7; */
     }
 
     animation-name: ${({ theme }) => theme.moonAnimationName};
@@ -235,7 +225,6 @@ export const Clouds = styled.div`
     }
   }
   div:nth-child(7) {
-    /* opacity: ${({ theme }) => theme.rainbowVisible}; */
     position: absolute ;
     top: 1px ;
     left: 1px ;

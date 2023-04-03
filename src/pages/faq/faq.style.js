@@ -17,7 +17,6 @@ export const LandingContainer = styled.div`
   width:100vw ;
   height:100vh ;
   position: relative ;
-  /* background: ${({ theme }) => theme.container_bg}; */
 
   animation-name: ${({ theme }) => theme.container_bg_animation} ;    
   animation-duration:1.5s;
@@ -60,7 +59,6 @@ export const DarkMask = styled.div`
 `;
 
 export const LinkButtons = styled.div`
-/* border: 1px solid red; */
   width:300px ;
   position: fixed;
   top:28px ;
@@ -70,7 +68,6 @@ export const LinkButtons = styled.div`
   align-items:center ;
   z-index: 999;
   div:nth-child(1) {
-    /* cursor: pointer; */
   }
   div:nth-child(2) {
     display:flex ;

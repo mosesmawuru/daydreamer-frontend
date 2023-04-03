@@ -1,11 +1,8 @@
 import React from "react";
 import HTMLFlipBook from "react-pageflip";
 import styled from "styled-components";
-
-
 import FlipBoard1 from "assets/images/paper1.png";
 import FlipBoard2 from "assets/images/paper2.png";
-
 import nft1 from "assets/images/nfts/ordinal/1.png";
 import nft2 from "assets/images/nfts/ordinal/2.png";
 import nft3 from "assets/images/nfts/ordinal/3.png";
@@ -16,16 +13,11 @@ import nft7 from "assets/images/nfts/ordinal/7.png";
 import nft8 from "assets/images/nfts/ordinal/8.png";
 
 const FlipBookContainer = styled.div`
-  /* border: 1px solid green; */
   display: flex;
   justify-content: center;
   align-items: center;
   .demoPage {
-    transition: all 0s ease !important;  
-    /* vertical-align: middle; */
-    /* width: 100%;
-    height: 100%; */
-    /* border: 1px solid red; */
+    transition: all 0s ease !important; 
     div.text-container {
       width: 100%;
       height: 100%;
@@ -104,11 +96,8 @@ const PageFlip = () => {
 
                 1x Day Dreamerz = 1x Ordinal Dreamerz Free Mint.<br />
               </p>
-              {/* <img src={nft3} alt="nft1" />
-              <img src={nft4} alt="nft1" /> */}
             </div>
           </div>
-          {/* <div className="text-next">Next</div> */}
         </div>
         <div className="demoPage right">
           <div className="text-container">

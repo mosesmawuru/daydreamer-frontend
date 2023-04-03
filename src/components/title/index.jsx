@@ -1,6 +1,4 @@
 import React, { useContext, useEffect } from 'react'
-
-
 import { MouseContext } from "../../contexts/mouse-context";
 
 import {
@@ -12,7 +10,6 @@ const Title = () => {
 
   const { cursorChangeHandler } = useContext(MouseContext);
 
-
   useEffect(() => {
 
     setTimeout(() => {
@@ -23,7 +20,6 @@ const Title = () => {
       element.style.animationTimingFunction = "ease-out";
     }, 1700);
   }, [])
-
 
   const addAnimationToLetter = (e) => {
     cursorChangeHandler("thumbed");
@@ -37,7 +33,6 @@ const Title = () => {
       element.style.animationName = "";
     }, 1000);
   }
-
 
   return (
     <TitleContainer className='container'>

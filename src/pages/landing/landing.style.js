@@ -14,7 +14,6 @@ export const LandingContainer = styled.div`
   width:100vw ;
   height:100vh ;
   position: relative ;
-  /* background: ${({ theme }) => theme.container_bg}; */
 
   animation-name: ${({ theme }) => theme.container_bg_animation} ;    
   animation-duration:1.5s;
@@ -37,7 +36,6 @@ export const DarkMask = styled.div`
   background-color: rgba(0,0,0,0.5) ;
   position: absolute;
   top: 0;
-  /* border: 1px solid red; */
   opacity: 0;
   display: ${props => props.isMask ? "block" : "none"} ;
   animation-name: ${props => props.isMask ? "show" : "hide"};
@@ -56,7 +54,6 @@ export const DarkMask = styled.div`
 `;
 
 export const LinkButtons = styled.div`
-/* border: 1px solid red; */
   width:300px ;
   height: 80px;
   position: absolute ;
@@ -66,7 +63,6 @@ export const LinkButtons = styled.div`
   justify-content:space-around ;
   align-items:center ;
   div:nth-child(1) {
-    /* cursor: pointer; */
   }
   div.switch {
     opacity: 0;
@@ -183,7 +179,6 @@ export const LinkButtons = styled.div`
   }
   @media screen and (max-width: 320px) {
     justify-content: flex-end;
-    /* padding-left: 5px; */
     right: 20px;
     width: 100px;
     div {

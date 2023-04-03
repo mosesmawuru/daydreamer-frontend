@@ -7,8 +7,6 @@ import {
   LinkButtons
 } from './mint.style'
 
-
-// import ChildrenComponent from '../../components/children';
 import MintBoard from '../../components/mintBoard';
 import BgComponent from '../../components/background2';
 
@@ -23,7 +21,6 @@ const Mint = (props) => {
 
   const [isMask, setMask] = useState(false);
 
-  // console.log(123123123, props);
   return (
     <LandingContainer>
       <BgComponent />
@@ -42,7 +39,6 @@ const Mint = (props) => {
           <a href="https://whitepaper.daydreamerz.io/" rel="noreferrer" target={'_blank'} style={{ width: "60%", height: '60%', color: '#FFF' }}><img src={whitepaper} alt="" style={{ width: "100%", height: "100%", scale: "1.5" }} /></a>
         </div>
       </LinkButtons>
-      {/* <ChildrenComponent isPosLeftChildren={true} setMask={setMask} /> */}
       <MintBoard setMask={setMask} />
       <Logo />
       <DarkMask isMask={isMask}></DarkMask>

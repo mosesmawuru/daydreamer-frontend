@@ -1,12 +1,10 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "aos/dist/aos.css";
-// import { ToastContainer } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // import for cursor
-
 import Cursor from "./components/cursor";
 
 // Import Theme Setting
@@ -18,10 +16,7 @@ import SoundComponent from './components/sound';
 // Import Hooks
 import { useDarkMode } from "./hooks/useDarkMode";
 import { useApolloSound } from "./hooks/useApolloSound";
-
 import Loading from "./components/loading";
-
-// import '@rainbow-me/rainbowkit/styles.css';
 import '@rainbow-me/rainbowkit/dist/index.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';

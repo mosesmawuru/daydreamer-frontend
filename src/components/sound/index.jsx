@@ -15,7 +15,6 @@ import paused from 'assets/images/music/paused.png';
 import { MouseContext } from 'contexts/mouse-context';
 
 const SoundContainer = styled.div`
-  /* border: 1px solid red; */
   position: fixed;
   bottom: 10px;
   left: 10px;
@@ -32,7 +31,6 @@ const SoundContainer = styled.div`
     justify-content: center;
     align-items: center;
     div:nth-child(1) {
-      /* border: 1px solid green; */
       width: 50%;
       height: 70%;
       @media screen and (max-width: 768px) {
@@ -40,7 +38,6 @@ const SoundContainer = styled.div`
       }
     }
     div:nth-child(2) {
-      /* border: 1px solid green; */
       width: 40%;
       height: 70%;
       padding-left: 5px;
@@ -94,7 +91,6 @@ const SoundContainer = styled.div`
     right: 145px;
   }
   @media screen and (max-width: 375px) {
-    /* width: 60px; */
   }
 `;
 
@@ -117,19 +113,12 @@ const SoundComponent = ({ isPlaying, soundToggler }) => {
     soundToggler();
   }
   const onSoundLoading = (e) => {
-    // console.log("onSoundLoading4444444", e)
   }
   const onSoundLoad = (e) => {
-    // console.log("onSoundLoad33333333", e)
   }
   const onSoundPlaying = () => {
-    // console.log("onSoundPlaying5555555")
-    // window.localStorage.setItem("soundPos", e.position);
-    // setPos(Number(e.position));
   }
   const onSoundBufferChange = (e) => {
-    // console.log("onSoundBufferChange6666666666", e)
-    // setPos(e.position);
   }
 
   return (
@@ -141,10 +130,7 @@ const SoundComponent = ({ isPlaying, soundToggler }) => {
       </div>
       <Sound
         url={audio_path}
-        // playStatus={Sound.status.PLAYING}
         playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.PAUSED}
-        // playFromPosition={0}
-        // position={pos}
         loop={true}
         autoLoad={true}
         onPlaying={onSoundPlaying}

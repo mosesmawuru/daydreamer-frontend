@@ -1,25 +1,15 @@
 import React from 'react';
-
-// import Switch from '../../components/switch';
-// import Title from '../../components/title';
 import Cloud from '../cloud';
-// import Stars from '../../components/stars';
 import Star from '../star';
-
-// importing style from styled component file
 import {
   Container,
   StarsImgs,
   Clouds,
 } from './bg1.style';
-
-// import images
-// import bottomCloudImg from "assets/images/whitesmoke.png";
 import rocketImg from "assets/images/rocket1.png";
 import rainbowImg from "assets/images/rainbow.png";
 import hugeMoon from "assets/images/hugeMoon.png";
 import hugeSun from "assets/images/hugeSun.png";
-
 
 const Background = () => {
   return (

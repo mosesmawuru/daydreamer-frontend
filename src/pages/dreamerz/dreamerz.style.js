@@ -22,28 +22,11 @@ export const LandingContainer = styled.div`
   width:100vw ;
   height:100vh ;
   position: relative ;
-  /* background: ${({ theme }) => theme.container_bg}; */
 
   animation-name: ${({ theme }) => theme.container_bg_animation} ;    
   animation-duration:1.5s;
   animation-timing-function:linear ;
   animation-fill-mode: forwards;
-/* 
-  img.cowboy {
-    display: none;
-    position: absolute;
-    left: calc((100vw - 400px) / 2);
-    @media screen and (max-width: 425px) {
-      display: block;
-      width: 400px;
-      height: 250px;
-      bottom: 50px;
-      z-index: 990 !important;
-    }
-    @media screen and (max-width: 425px) {
-    }
-  } */
-  
   @media screen and (max-width: 600px) {
     height: 89vh;
   }
@@ -115,7 +98,6 @@ export const LandingContainer = styled.div`
     @media screen and (max-width: 325px) {
     }
     div.aboutus-title {     
-      /* border :1px solid red ; */
       font-family: 'Titan One';
       font-style: normal;
       font-weight: 400;
@@ -137,14 +119,12 @@ export const LandingContainer = styled.div`
       }
     }
     div.aboutus-body {
-      /* border: 1px solid yellow; */
       width: 90%;
       overflow-y: scroll;
       display: flex;
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;      
-      /* box-shadow: 0 3px 3px 0 rgb(0 0 0 / 37%), 0 1px 11px 0 rgb(0 0 0 / 74%); */
       border-radius: 10px;
       img, p {
         margin-top: 10px;
@@ -191,28 +171,6 @@ export const LandingContainer = styled.div`
     }
   }
 
-  /* .children {
-    position: absolute;
-    bottom: 0%;
-    border: 1px solid red;
-    @media screen and (max-width: 1024px) {
-      width: 85vw;
-    }
-    @media screen and (max-width: 768px) {
-      width: 90vw;
-    }
-    @media screen and (max-width: 425px) {
-      display: none;
-    }
-    img {
-      z-index: 999;
-    }
-    img:hover {
-      transform:scale(1.3) ;
-      z-index: 999;
-    }
-  } */
-    
 `;
 
 
@@ -240,7 +198,6 @@ export const DarkMask = styled.div`
 `;
 
 export const LinkButtons = styled.div`
-/* border: 1px solid red; */
   width:300px ;
   position: fixed;
   top:28px ;
@@ -250,7 +207,6 @@ export const LinkButtons = styled.div`
   align-items:center ;
   z-index: 999;
   div:nth-child(1) {
-    /* cursor: pointer; */
   }
   div:nth-child(2) {
     display:flex ;
@@ -304,9 +260,6 @@ export const LinkButtons = styled.div`
       display: none;
     }
   }
-  /* @media screen and (max-width: 320px) {
-    width: 195px;
-  } */
   @media screen and (max-width: 515px) {
     width: 80px;
     left: unset;

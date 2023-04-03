@@ -1,16 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-
 import styled from 'styled-components'
-
 import board from 'assets/images/walletBoard.png';
 import cButton from 'assets/images/cButton.png';
 import wlButton from 'assets/images/wlButton.png';
-
 import { toast } from "react-toastify";
 import axios from "axios";
 import { MouseContext } from 'contexts/mouse-context';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-
 import { useAccount } from 'wagmi';
 
 // style
@@ -114,16 +110,7 @@ const FaqContainer = styled.div`
     justify-content: center;
     align-items: center;
     row-gap: 20px;
-    
     bottom: 45px;
-    /* animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    opacity: 0; */
-    /* @keyframes Appear {
-      from { bottom: 180px; opacity: 0 }
-      to { bottom: 100px; opacity: 1; }
-    } */
     span {
       left: 43px;
     }
@@ -172,12 +159,6 @@ const FaqContainer = styled.div`
       width: 100%;
       transform: translateY(-3px) rotate(-4deg);
     }
-    /* span:first-child {
-      bottom: 45px;
-    } */
-    /* span:last-child {
-      bottom: 15px;
-    } */
   }
 
   span.count {
