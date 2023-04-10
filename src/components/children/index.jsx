@@ -78,7 +78,7 @@ const Children = (props) => {
   const ourvision1 = "https://drive.google.com/uc?id=1KsFnwsJFYwWjtHF_69t3gPuK43dH4TBu";
   const artflexing1 = "https://drive.google.com/uc?id=19_sxTZTqfQM0LTD1ArVuGGIFr7gGaNma";
   const faq1 = "https://drive.google.com/uc?id=1ip8Xl6JOWpYUVZSJIOUV22TPFEl038Tm";
-  const mint1 = "https://drive.google.com/uc?id=1FHWyrqQUXqCebcvJIBLomxuMGWJqaqmp";
+  const mint1 = "https://drive.google.com/uc?id=1RpH120XrGBz6vfiQDDRy8vG6WmWo8BQH";
   const comming1 = "https://drive.google.com/uc?id=1ycErhQMbinisI1UTAJqYKnUlYrR877Vw";
 
   const onChildClick = (e, FuncType) => {

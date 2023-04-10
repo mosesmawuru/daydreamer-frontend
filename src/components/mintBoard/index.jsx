@@ -3,11 +3,15 @@ import styled from 'styled-components'
 import board from 'assets/images/walletBoard.png';
 import cButton from 'assets/images/cButton.png';
 import wlButton from 'assets/images/wlButton.png';
+import mintButton from 'assets/images/mintButton.png';
 import { toast } from "react-toastify";
 import axios from "axios";
 import { MouseContext } from 'contexts/mouse-context';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from 'wagmi';
+
+import { ZonedDate } from '@progress/kendo-date-math';
+import '@progress/kendo-date-math/tz/America/Los_Angeles';
 
 // style
 const FaqContainer = styled.div`
@@ -70,9 +74,9 @@ const FaqContainer = styled.div`
     background: url(${cButton}) no-repeat;
     background-size: 100% 100%;
     width: 200px;
-    height: 100px;
+    height: 80px;
     position: absolute;
-    bottom: 200px;
+    bottom: 235px;
     left: 150px;
     transform: scale(1.2);
 
@@ -89,8 +93,8 @@ const FaqContainer = styled.div`
 
     @media screen and (max-width: 375px) {
       scale: 0.8;
-      bottom: 150px;
-      left: 110px;
+      bottom: 180px;
+      left: calc(110px - ((375px - 100vw) / 1.7));
     }
     @media screen and (max-width: 325px) {
       left: 80px;
@@ -100,19 +104,18 @@ const FaqContainer = styled.div`
 
     background: url(${wlButton}) no-repeat;
     background-size: 100% 100%;
-    width: 200px;
-    height: 200px;
     position: absolute;
+    height: 150px;
     width: 300px;
     left: 100px;
+    bottom: 125px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 20px;
-    bottom: 45px;
     span {
-      left: 43px;
+      margin-top: -10px;
     }
     span:hover {
       color: #ff3e3e;
@@ -120,6 +123,7 @@ const FaqContainer = styled.div`
     input {
       width: 250px;
       height: 30px;
+      margin-top: 6px;
       outline: none;
       border: 2px solid #52d7ff;
       border-radius: 20px;
@@ -129,6 +133,7 @@ const FaqContainer = styled.div`
       font-family: "Titan One";
       font-size: 18px;
       font-weight: lighter;
+      transform: rotate(-2deg);
     }
     input:focus {
       border: 2px solid #ff3e3e;
@@ -136,8 +141,8 @@ const FaqContainer = styled.div`
 
     @media screen and (max-width: 375px) {
       scale: 0.8;
-      bottom: 18px;
-      left: 65px;
+      bottom: 82px;
+      left: calc(65px - ((375px - 100vw) / 1.7));
     }
     @media screen and (max-width: 325px) {
       left: 30px;
@@ -178,13 +183,13 @@ const FaqContainer = styled.div`
       height: 180px;
     }
     img:first-child {
-      transform: scale(0.8) translateY(10px) translateX(25px);
+      transform: scale(0.8) translateY(25px) translateX(25px);
       @media screen and (max-width: 391px) {
         display: none;
       }
     }
     img:last-child {
-      transform: translateY(-20px) translateX(-5px);
+      transform: translateY(0px) translateX(-5px);
       @media screen and (max-width: 391px) {
         transform: scale(1.3) translateY(18vh) translateX(35vw);
       }
@@ -195,16 +200,124 @@ const FaqContainer = styled.div`
   }
 `;
 
-const FaqBoard = () => {
+const MintButtonArea = styled.div`
+  /* background: url(${mintButton}) no-repeat; */
+  background-size: 100% 100%;
+  width: 300px;
+  height: 120px;
+  position: absolute;
+  left: 100px;
+  bottom: 20px;
+  color: #33cfff;
+  font-size: 30px;
+  text-align: center;
+  -webkit-text-stroke: 1px #fff;
+
+  @media screen and (max-width: 375px) {
+    left: calc(60px - ((375px - 100vw) / 1.7));
+    bottom: -10px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @media screen and (max-width: 375px) {
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+
+  span {
+    width: 23%;
+    height: 70px;
+    border: 3px dashed #83d1e9;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 375px) {
+      width: 20%;
+      height: 60px;
+      font-size: 25px;
+    }
+  }
+
+  i {
+    font-size: 20px;
+  }
+
+  a {
+    padding: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    -webkit-text-stroke: 1px #fff;
+    color: #33cfff;
+    font-family: "Titan One";
+    z-index: 998;
+    text-decoration: none;
+  }
+  a:hover {
+    -webkit-text-stroke: 1px #fff;
+    color: #ff3e3e;
+  }
+`;
+
+const MintBoard = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
 
   const [addr, setWalletAddress] = useState(undefined);
   const [wlLoading, setWlLoading] = useState(false);
   const { address } = useAccount();
 
+  // for countdown timer
+  const [day, setDay] = useState(0);
+  const [hour, setHour] = useState(0);  
+  const [min, setMin] = useState(0);  
+  const [sec, setSec] = useState(0);  
+  const [isExpired, setIsExpired] = useState(false);
+
   useEffect(() => {
     setWalletAddress(address);
   }, [address])
+
+  useEffect(() => {
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+    // countDownDate = countDownDate - new Date("Jan 5, 2024 15:37:25").getTimezoneOffset();
+
+    // Update the count down every 1 second
+    var x = setInterval(() => {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // now = now - new Date().getTimezoneOffset();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Set vals
+      setDay(days);
+      setHour(hours);
+      setMin(minutes);
+      setSec(seconds);
+      // If the count down is finished, set isExpired to true
+      if (distance < 0) {
+        clearInterval(x);
+        setIsExpired(true);
+      }
+    }, 1000);
+  }, [])
 
   const WLchecker = async () => {
     if (addr === undefined) {
@@ -231,6 +344,10 @@ const FaqBoard = () => {
       });
     }
   };
+
+  const openseaDropHandler = () => {
+
+  }
 
   return (
     <FaqContainer>
@@ -307,6 +424,15 @@ const FaqBoard = () => {
           );
         }}
       </ConnectButton.Custom>
+      <MintButtonArea>
+        <div>          
+          <span>{day}<i>d</i></span>
+          <span>{hour}<i>h</i></span>
+          <span>{min}<i>m</i></span>
+          <span>{sec}<i>s</i></span>
+        </div>
+        <a href="https://opensea.io/collection/day-dreamerz/drop" target={'_blank'} onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")}>Opensea Drop</a>
+      </MintButtonArea>
 
       <div className='graphic'>
         <img src="https://drive.google.com/uc?id=1gq8F6ZEjQ2ArUR622w7T21wRnER9L3iH" alt="" />
@@ -316,4 +442,4 @@ const FaqBoard = () => {
   )
 }
 
-export default FaqBoard;
+export default MintBoard;
