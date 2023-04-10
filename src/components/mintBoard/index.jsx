@@ -286,7 +286,16 @@ const MintBoard = () => {
 
   useEffect(() => {
     // Set the date we're counting down to
-    var countDownDate = new Date("April 12, 2023 09:00:00").getUTCDate().getTime();
+    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var utcM = new Date("April 12, 2023 09:00:00").getUTCMonth();
+    var utcD = new Date("April 12, 2023 09:00:00").getUTCDate();
+    var utcH = new Date("April 12, 2023 09:00:00").getUTCHours();
+    var utcMin = new Date("April 12, 2023 09:00:00").getUTCMinutes();
+    var utcS = new Date("April 12, 2023 09:00:00").getUTCSeconds();
+
+    let countDownDate = new Date(`${month[utcM]} ${utcD}, 2023 ${utcH}:${utcMin}:${utcS}`).getTime();
+
+    console.log(34234234, countDownDate);
 
     // countDownDate = countDownDate - new Date("Jan 5, 2024 15:37:25").getTimezoneOffset();
 
@@ -346,9 +355,6 @@ const MintBoard = () => {
     }
   };
 
-  const openseaDropHandler = () => {
-
-  }
 
   return (
     <FaqContainer>
