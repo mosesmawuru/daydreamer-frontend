@@ -305,7 +305,7 @@ const MintBoard = () => {
       // Get today's date and time
       var now = new Date().getTime();
 
-      // now = now - new Date().getTimezoneOffset();
+      now = now - new Date().getTimezoneOffset();
 
       // Find the distance between now and the count down date
       var distance = countDownDate - now;
