@@ -9,9 +9,7 @@ import axios from "axios";
 import { MouseContext } from 'contexts/mouse-context';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from 'wagmi';
-
-import { ZonedDate } from '@progress/kendo-date-math';
-import '@progress/kendo-date-math/tz/America/Los_Angeles';
+import moment from 'moment-timezone';
 
 // style
 const FaqContainer = styled.div`
@@ -280,22 +278,25 @@ const MintBoard = () => {
   const [sec, setSec] = useState(0);  
   const [isExpired, setIsExpired] = useState(false);
 
+  const toTimeZone = (time, zone) => {
+    var format = `YYYY/MM/DD HH:mm:ss`;
+    return moment(time, format).tz(zone).format(format);
+}
+
   useEffect(() => {
     setWalletAddress(address);
   }, [address])
 
   useEffect(() => {
     // Set the date we're counting down to
-    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    var utcM = new Date("April 12, 2023 09:00:00").getUTCMonth();
-    var utcD = new Date("April 12, 2023 09:00:00").getUTCDate();
-    var utcH = new Date("April 12, 2023 09:00:00").getUTCHours();
-    var utcMin = new Date("April 12, 2023 09:00:00").getUTCMinutes();
-    var utcS = new Date("April 12, 2023 09:00:00").getUTCSeconds();
+    // var utcM = new Date("April 12, 2023 09:00:00").getUTCMonth();
+    // var utcD = new Date("April 12, 2023 09:00:00").getUTCDate();
+    // var utcH = new Date("April 12, 2023 09:00:00").getUTCHours();
+    // var utcMin = new Date("April 12, 2023 09:00:00").getUTCMinutes();
+    // var utcS = new Date("April 12, 2023 09:00:00").getUTCSeconds();
 
-    let countDownDate = new Date(`${month[utcM]} ${utcD}, 2023 ${utcH}:${utcMin}:${utcS}`).getTime();
+    let countDownDate = new Date ("April 12, 2023 09:00:00").getTime();
 
-    console.log(34234234, countDownDate);
 
     // countDownDate = countDownDate - new Date("Jan 5, 2024 15:37:25").getTimezoneOffset();
 
@@ -303,12 +304,12 @@ const MintBoard = () => {
     var x = setInterval(() => {
 
       // Get today's date and time
-      var now = new Date().getTime();
-
-      now = now - new Date().getTimezoneOffset();
+      var now = new Date();
+      let pdtTimeNow = toTimeZone(now, "America/Los_Angeles");
+      let newNow = new Date(pdtTimeNow).getTime();
 
       // Find the distance between now and the count down date
-      var distance = countDownDate - now;
+      var distance = countDownDate - newNow;
 
       // Time calculations for days, hours, minutes and seconds
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
