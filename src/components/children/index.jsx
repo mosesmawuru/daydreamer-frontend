@@ -90,7 +90,7 @@ const Children = (props) => {
         navigate("/day-dreamerz");
         break;
       case "mint":
-        navigate("/whitelist-checker");
+        navigate("/mint");
         break;
       case "faq":
         navigate("/faq");

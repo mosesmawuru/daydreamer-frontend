@@ -82,7 +82,7 @@ function App() {
                   }
                 ></Route>
                 <Route
-                  path="/whitelist-checker"
+                  path="/mint"
                   element={
                     <Mint onThemeClick={themeToggler} />
                   }

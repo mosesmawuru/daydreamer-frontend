@@ -169,7 +169,7 @@ const Menu = (props) => {
           <div><a href="/day-dreamerz">Day Dreamerz</a> </div>
           <div><a href="/ordinal-dreamerz">Ordinal Dreamerz</a> </div>
           <div><a href="/D-connect">D-connect</a> </div>
-          <div><a href="/whitelist-checker">WL checker</a> </div>
+          <div><a href="/mint">WL checker</a> </div>
           <div><a href="/faq">FAQ</a> </div>
           <div className='social-api'>
             <div>

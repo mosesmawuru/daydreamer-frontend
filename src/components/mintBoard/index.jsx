@@ -199,13 +199,12 @@ const FaqContainer = styled.div`
 `;
 
 const MintButtonArea = styled.div`
-  /* background: url(${mintButton}) no-repeat; */
   background-size: 100% 100%;
   width: 300px;
   height: 120px;
   position: absolute;
   left: 100px;
-  bottom: 20px;
+  bottom: 100px;
   color: #33cfff;
   font-size: 30px;
   text-align: center;
@@ -213,7 +212,7 @@ const MintButtonArea = styled.div`
 
   @media screen and (max-width: 375px) {
     left: calc(60px - ((375px - 100vw) / 1.7));
-    bottom: -10px;
+    bottom: 70px;
   }
 
   div {
@@ -359,7 +358,7 @@ const MintBoard = () => {
 
   return (
     <FaqContainer>
-      <ConnectButton.Custom>
+      {/* <ConnectButton.Custom>
         {({
           account,
           chain,
@@ -369,8 +368,6 @@ const MintBoard = () => {
           authenticationStatus,
           mounted,
         }) => {
-          // Note: If your app doesn't use authentication, you
-          // can remove all 'authenticationStatus' checks
 
           if (account) setWalletAddress(account.address);
 
@@ -431,7 +428,7 @@ const MintBoard = () => {
             </div>
           );
         }}
-      </ConnectButton.Custom>
+      </ConnectButton.Custom> */}
       <MintButtonArea>
         <div>          
           <span>{day}<i>d</i></span>
