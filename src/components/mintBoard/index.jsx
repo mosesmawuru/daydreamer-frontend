@@ -200,17 +200,18 @@ const FaqContainer = styled.div`
 
 const MintButtonArea = styled.div`
   background-size: 100% 100%;
-  width: 300px;
+  width: 350px;
   height: 120px;
   position: absolute;
-  left: 100px;
-  bottom: 100px;
+  left: 75px;
+  bottom: 130px;
   color: #33cfff;
   font-size: 30px;
   text-align: center;
   -webkit-text-stroke: 1px #fff;
 
   @media screen and (max-width: 375px) {
+    width: 300px;
     left: calc(60px - ((375px - 100vw) / 1.7));
     bottom: 70px;
   }
@@ -219,15 +220,16 @@ const MintButtonArea = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 10px;
     @media screen and (max-width: 375px) {
       justify-content: center;
-      gap: 5px;
+      gap: 8px;
     }
   }
 
   span {
     width: 23%;
-    height: 70px;
+    height: 78px;
     border: 3px dashed #83d1e9;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.35);
@@ -235,6 +237,7 @@ const MintButtonArea = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
     @media screen and (max-width: 375px) {
       width: 20%;
       height: 60px;
@@ -247,15 +250,20 @@ const MintButtonArea = styled.div`
   }
 
   a {
-    padding: 10px;
+    /* padding: 10px;
+    margin-top: 10px; */
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     -webkit-text-stroke: 1px #fff;
     color: #33cfff;
     font-family: "Titan One";
     z-index: 998;
     text-decoration: none;
+
+    @media screen and (max-width: 375px) {
+      font-size: 1.5rem;
+    }
   }
   a:hover {
     -webkit-text-stroke: 1px #fff;
@@ -436,7 +444,7 @@ const MintBoard = () => {
           <span>{min}<i>m</i></span>
           <span>{sec}<i>s</i></span>
         </div>
-        <a href="https://opensea.io/collection/day-dreamerz/drop" target={'_blank'} onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")}>Opensea Drop</a>
+        <a href="https://opensea.io/collection/day-dreamerz/drop" target={'_blank'} onMouseEnter={() => cursorChangeHandler("hovered")} onMouseLeave={() => cursorChangeHandler("")}>Minting on Opensea</a>
       </MintButtonArea>
 
       <div className='graphic'>
